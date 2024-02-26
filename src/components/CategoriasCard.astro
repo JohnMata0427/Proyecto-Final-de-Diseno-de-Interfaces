@@ -1,0 +1,19 @@
+---
+interface props {
+  title: string;
+  image: string;
+  href: string;
+  className: string;
+}
+
+const { title, image, href, className } = Astro.props;
+---
+
+<a class={`h-[420px] w-[260px] flex flex-col items-center justify-between rounded-[20px] shadow-md bg-gradient-to-b from-[#150E3C] to-[#D9D9D9] ${className}`} href={href}>
+    <div class="flex items-center justify-center h-full">
+        <img src={image} alt={title} class="">
+    </div>
+    <div class="flex items-end justify-center bg-gris-oscuro w-full h-[50px] rounded-b-[20px]">
+        <h2 class="font-bold text-[27px]">{title}</h2>
+    </div>
+</a>

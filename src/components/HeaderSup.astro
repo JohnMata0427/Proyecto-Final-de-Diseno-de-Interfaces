@@ -1,0 +1,48 @@
+---
+import HeaderInf from './HeaderInf.jsx';
+// TypeScript
+---
+
+<div class="bg-gris-oscuro pt-7 flex pb-7 justify-between">
+    <a class="w-[200px] pl-10 flex items-center" href="/">
+        <img class="w-full h-[40px]" src="/assets/images/Logo.png" alt="Logo" />
+    </a>
+    <div class="flex">
+        <div class="flex items-center justify-end">
+            <input class="w-[610px] h-10 pl-4 mr-10 rounded-[15px]" type="text" placeholder="Buscar Productos..."/>
+            <button class="h-10 mr-14 absolute">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                    <path d="M21 21l-6 -6" />
+                </svg>
+            </button>
+        </div>
+    <a class="flex h-10 items-center mr-10" href="/mi-cuenta">
+        <svg width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="Group 1">
+            <path id="Vector" d="M15.2098 0.00139365C6.77416 -0.112538 -0.112543 6.77383 0.00139372 15.2091C0.113889 23.299 6.70133 29.8861 14.7916 29.9986C23.2287 30.1139 30.1139 23.2276 29.9986 14.7923C29.8875 6.701 23.3001 0.113883 15.2098 0.00139365ZM24.3262 23.5989C24.2975 23.63 24.2623 23.6544 24.2231 23.6703C24.1839 23.6862 24.1417 23.6933 24.0994 23.6911C24.0572 23.6889 24.0159 23.6775 23.9786 23.6576C23.9413 23.6376 23.9088 23.6097 23.8835 23.5759C23.2385 22.732 22.4486 22.0095 21.5506 21.4422C19.7147 20.2639 17.3883 19.6149 15.0007 19.6149C12.6131 19.6149 10.2867 20.2639 8.45076 21.4422C7.55288 22.0093 6.76298 22.7315 6.11794 23.5751C6.0926 23.609 6.06011 23.6369 6.02279 23.6568C5.98547 23.6768 5.94421 23.6882 5.90196 23.6904C5.85971 23.6926 5.81749 23.6855 5.7783 23.6696C5.7391 23.6536 5.7039 23.6293 5.67517 23.5982C3.55917 21.3141 2.36054 18.3295 2.30898 15.2163C2.19144 8.19942 7.94959 2.32617 14.9697 2.30887C21.9898 2.29156 27.6924 7.99175 27.6924 15C27.6948 18.1882 26.4925 21.2596 24.3262 23.5989Z" fill="white"/>
+            <path id="Vector_2" d="M15.164 6.14966C13.742 6.14966 12.4562 6.62015 11.5426 7.47519C10.6289 8.33023 10.1724 9.51251 10.2756 10.7814C10.4847 13.2803 12.6776 15.3176 15.164 15.3176C17.6505 15.3176 19.8391 13.2803 20.0525 10.782C20.1592 9.52525 19.7064 8.35379 18.7776 7.48283C17.8603 6.62334 16.5767 6.14966 15.164 6.14966Z" fill="white"/>
+            </g>
+        </svg>      
+        <span class="pl-2 text-[15px]">Mi Cuenta</span>
+    </a>
+    <a class="flex h-10 items-center mr-10" href="/carrito">
+        <svg width="25" height="25" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="Group 2">
+            <path id="Vector" d="M10.911 33.9119C12.2501 33.9119 13.3357 32.6807 13.3357 31.1619C13.3357 29.6431 12.2501 28.4119 10.911 28.4119C9.5719 28.4119 8.48633 29.6431 8.48633 31.1619C8.48633 32.6807 9.5719 33.9119 10.911 33.9119Z" fill="white"/>
+            <path id="Vector_2" d="M27.8838 33.9119C29.2229 33.9119 30.3085 32.6807 30.3085 31.1619C30.3085 29.6431 29.2229 28.4119 27.8838 28.4119C26.5447 28.4119 25.4591 29.6431 25.4591 31.1619C25.4591 32.6807 26.5447 33.9119 27.8838 33.9119Z" fill="white"/>
+            <path id="Vector_3" d="M10.2883 21.537H30.0904L33 5.03699H7.72036L7.07857 0.911987H0V3.66199H5.04487L8.6819 27.037H30.3086V24.287H10.7156L10.2883 21.537Z" fill="white"/>
+            </g>
+        </svg>
+        <span class="mb-5 text-[12px] bg-sky-500 rounded-full">.  1  .</span>
+    </a>
+    </div>
+</div>
+<HeaderInf client:visible/>
+
+<style>
+    input {
+        color: #1E1E1E;
+    }
+</style>
