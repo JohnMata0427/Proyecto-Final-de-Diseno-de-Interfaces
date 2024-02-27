@@ -1,7 +1,7 @@
 function TrabajamosCon() {
     return (
         <>
-            <ul class="flex justify-center items-center">
+            <ul className="flex justify-center items-center">
                 <li><img src="/assets/images/icons/samsung.png" alt="Samsung" /></li>
                 <li><img src="/assets/images/icons/lg.png" alt="LG" /></li>
                 <li><img src="/assets/images/icons/sony.png" alt="Sony" /></li>

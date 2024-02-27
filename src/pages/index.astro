@@ -5,6 +5,39 @@ import CategoriasCard from '../components/CategoriasCard.astro';
 import TrabajamosCon from '../components/TrabajamosCon.jsx';
 import Productos from '../components/Productos.astro';
 import Footer from '../components/Footer.astro';
+
+// JSON DATA para los productos
+const productos = [
+	{
+		id: "LAP0366",
+		nombre: "Laptop HP 15-DW3021WM Core i3 11va",
+		precio: 744.99,
+		cantidad: 1,
+		src: "/assets/images/products/product1.png"
+	},
+	{
+		id: "MON0378",
+		nombre: "Monitor HP 24mh FHD IPS",
+		precio: 169.99,
+		cantidad: 1,
+		src: "/assets/images/products/product2.png"
+	},
+	{
+		id: "PER0490",
+		nombre: "Teclado HP K1500",
+		precio: 14.99,
+		cantidad: 1,
+		src: "/assets/images/products/product3.png"
+	},
+	{
+		id: "HAR0211",
+		nombre: "Disco Duro Externo WD Elements 1TB",
+		precio: 54.99,
+		cantidad: 1,
+		src: "/assets/images/products/product4.png"
+	}
+];
+
 ---
 
 <Layout title="Tienda Tecnológica | Tecny">
@@ -31,10 +64,11 @@ import Footer from '../components/Footer.astro';
 		<section class="my-10">
 			<h2 class="text-[44px] mb-5 text-center text-morado-primario font-normal">Productos Nuevos</h2>
 			<div class="flex justify-center">
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product1.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product2.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product3.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product4.png' className=''/>
+				{
+					productos.map((producto, index) => (
+						<Productos key={index} id={producto.id} nombre={producto.nombre} precio={producto.precio} cantidad={producto.cantidad} src={producto.src} className='mr-5'/>
+					))
+				}
 			</div>
 		</section>
 	</main>
