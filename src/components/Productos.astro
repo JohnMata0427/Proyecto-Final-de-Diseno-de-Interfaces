@@ -1,6 +1,5 @@
 ---
 interface Props {
-    key: number;
     id: string;
     nombre: string;
     precio: number;
@@ -10,11 +9,12 @@ interface Props {
 }
 
 const { id, nombre, precio, cantidad, src, className} = Astro.props;
+
 ---
 
-<article class={`w-[250px] h-[450px] border-[#dadada] border-solid border-[1px] rounded-[15px] shadow-lg ${className}`}>
+<article class={`w-[250px] h-auto border-[#dadada] border-solid border-[1px] rounded-[20px] shadow-lg ${className}`}>
     <a class="h-[225px] flex justify-center items-center" href={`/categorias/productos/${id}`}>
-        <img src={ src } alt={ nombre }>
+        <img class="p-7" src={ src } alt={ nombre }>
     </a>
     <hr class="border-[#dadada]">
     <div class="h-[225px]">

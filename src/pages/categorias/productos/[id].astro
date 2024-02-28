@@ -1,0 +1,47 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from '../../../layouts/Layout.astro';
+import HeaderSup from '../../../components/HeaderSup.astro';
+import Footer from '../../../components/Footer.astro';
+import DescripcionProducto from '../../../components/DescripcionProducto.astro';
+
+import dataMonitores from '../../../data/dataMonitores.js';
+import dataLaptops from '../../../data/dataLaptops.js';
+import dataHardware from '../../../data/dataHardware.js';
+import dataPerifericos from '../../../data/dataPerifericos.js';
+
+const allData = [...dataMonitores, ...dataLaptops, ...dataHardware, ...dataPerifericos];
+
+export async function getStaticPaths() {
+    const allDataPath = [...dataMonitores, ...dataLaptops, ...dataHardware, ...dataPerifericos];
+    const paths = allDataPath.map(product => ({ params: { id: product.id } }));
+
+    return paths;
+}
+
+let { id } = Astro.params;
+
+let product = allData.find(item => item.id === id);
+
+---
+
+<Layout title={`${product?.nombre} | Tecny`}>
+	<header>
+		<HeaderSup />
+	</header>
+	<main>
+		<DescripcionProducto client:visible id={product?.id} nombre={product?.nombre} precio={product?.precio} descripcion={product?.descripcion} src={product?.src} categoria={''} />
+	</main>
+	<footer>
+		<Footer />
+	</footer>
+</Layout>
+
+<style is:global>
+    * {
+        color: white;
+        font-family: 'KoPub Batang';
+        font-weight: 400;
+        word-wrap: break-word;
+    }
+</style>
