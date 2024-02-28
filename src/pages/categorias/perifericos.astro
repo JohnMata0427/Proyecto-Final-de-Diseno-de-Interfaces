@@ -18,7 +18,7 @@ import dataPerifericos from '../../data/dataPerifericos.js';
 			<div class="ml-5">
 				<Filtrar client:visible setFiltro='categorias'/>
 			</div>
-			<div class="grid grid-cols-4 gap-4">
+			<div class="flex flex-wrap justify-center gap-y-7 gap-x-4">
 				{
 					dataPerifericos.map((producto, index) => (
 						<Productos id={producto.id} nombre={producto.nombre} precio={producto.precio} cantidad={1} src={producto.src} className={index%4 === 0 ? '':'mr-5'}/>

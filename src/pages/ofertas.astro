@@ -16,7 +16,7 @@ import Productos from '../components/Productos.astro';
 			<div class="ml-5">
 				<Filtrar client:visible setFiltro='categorias'/>
 			</div>
-			<div class="grid grid-cols-4 gap-4">
+			<div class="flex flex-wrap justify-center gap-y-7 gap-x-4">
 				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product1.png' className='mr-5'/>
 				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product2.png' className='mr-5'/>
 				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product3.png' className='mr-5'/>

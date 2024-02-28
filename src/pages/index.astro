@@ -30,8 +30,8 @@ const productos = allData.map((data) => {
 	<main>
 		<img class="h-[75vh]" src="./assets/images/banners/Banner Inicio.png" alt="Oferta 1"/>
 		<section class="pt-5 pb-16">
-			<h2 class="text-[44px] font-normal mb-5 text-center text-morado-primario">Categorías</h2>
-			<div class="flex justify-center">
+			<h2 class="text-[44px] font-normal mb-5 text-center text-morado-primario mt-3">Categorías</h2>
+			<div class="flex flex-wrap justify-center">
 				<CategoriasCard title="Hardware" image="./assets/images/categories/Categoria Hardware.png" href="/categorias/hardware" className="mr-5"/>
 				<CategoriasCard title="Perifericos" image="./assets/images/categories/Categoria Perifericos.png" href="/categorias/perifericos" className="mr-5"/>
 				<CategoriasCard title="Monitores" image="./assets/images/categories/Categoria Monitores.png" href="/categorias/monitores" className="mr-5"/>
@@ -45,11 +45,11 @@ const productos = allData.map((data) => {
 			</div>
 		</section>
 		<section class="my-10">
-			<h2 class="text-[44px] mb-5 text-center text-morado-primario font-normal">Productos Nuevos</h2>
-			<div class="flex justify-center">
+			<h2 class="text-[44px] mb-5 text-center text-morado-primario font-normal mt-3">Productos Nuevos</h2>
+			<div class="flex flex-wrap justify-center">
 				{
-					productos.map((producto) => (
-						<Productos id={producto.id} nombre={producto.nombre} precio={producto.precio} cantidad={1} src={producto.src} className='mr-5'/>
+					productos.map((producto, index) => (
+						<Productos id={producto.id} nombre={producto.nombre} precio={producto.precio} cantidad={1} src={producto.src} className={(index+1)%4 === 0 ? '':'mr-5'}/>
 					))
 				}
 			</div>

@@ -9,6 +9,7 @@ import dataMonitores from '../../../data/dataMonitores.js';
 import dataLaptops from '../../../data/dataLaptops.js';
 import dataHardware from '../../../data/dataHardware.js';
 import dataPerifericos from '../../../data/dataPerifericos.js';
+import Productos from "../../../components/Productos.astro";
 
 const allData = [...dataMonitores, ...dataLaptops, ...dataHardware, ...dataPerifericos];
 
@@ -23,6 +24,8 @@ let { id } = Astro.params;
 
 let product = allData.find(item => item.id === id);
 
+let contador = 0;
+
 ---
 
 <Layout title={`${product?.nombre} | Tecny`}>
@@ -31,6 +34,19 @@ let product = allData.find(item => item.id === id);
 	</header>
 	<main>
 		<DescripcionProducto client:visible id={product?.id} nombre={product?.nombre} precio={product?.precio} descripcion={product?.descripcion} src={product?.src} categoria={''} />
+        <section>
+            <h2 class="text-center text-morado-primario text-[40px] font-bold">Productos Relacionados</h2>
+            <div class="flex justify-center my-5">
+                {allData.map((item) => {
+                    if (((item.id !== product?.id && item.subcategoria === product?.subcategoria) || item.categoria === product?.categoria) && contador < 4) {
+                        contador++;
+                        return (
+                            <Productos id={item.id} nombre={item.nombre} precio={item.precio} cantidad={1} src={item.src} className={contador%4 === 0 ? '':'mr-5'}/>
+                        ) 
+                    }
+                })}
+            </div>
+        </section>
 	</main>
 	<footer>
 		<Footer />
