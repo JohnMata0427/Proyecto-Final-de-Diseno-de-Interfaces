@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export default function Filtrar({ setFiltro }) {
     const [value, setValue] = useState(0);
-
+    const [precio, setPrecio] = useState([0, 5000]);
     const handleOnChange = (e) => {
         setValue(e.target.value);
         setFiltro(`Precio: ${e.target.value}`);

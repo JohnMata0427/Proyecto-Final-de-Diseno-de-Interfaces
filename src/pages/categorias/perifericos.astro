@@ -21,7 +21,7 @@ import dataPerifericos from '../../data/dataPerifericos.js';
 			<div class="flex flex-wrap justify-center gap-y-7 gap-x-4">
 				{
 					dataPerifericos.map((producto, index) => (
-						<Productos id={producto.id} nombre={producto.nombre} precio={producto.precio} cantidad={1} src={producto.src} className={index%4 === 0 ? '':'mr-5'}/>
+						<Productos id={producto.id} nombre={producto.nombre} precio={producto.precio} cantidad={1} src={producto.src} className={(index+1)%4 === 0 ? '':'mr-5'}/>
 					))
 				}
 			</div>
