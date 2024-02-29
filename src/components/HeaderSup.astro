@@ -5,11 +5,11 @@ import HeaderInf from './HeaderInf.jsx';
 
 <div class="bg-gris-oscuro pt-7 flex pb-7 justify-between">
     <a class="w-[200px] pl-10 flex items-center" href="/">
-        <img class="w-full h-[40px]" src="/assets/images/Logo.png" alt="Logo" />
+        <img class="logo w-full h-[40px]" src="/assets/images/Logo.png" alt="Logo" />
     </a>
     <div class="flex">
         <div class="flex items-center justify-end">
-            <input class="w-[610px] h-10 pl-4 mr-10 rounded-[15px]" type="text" placeholder="Buscar Productos..."/>
+            <input class="searchbar w-[610px] h-10 pl-4 mr-10 rounded-[15px]" type="text" placeholder="Buscar Productos..."/>
             <button class="h-10 mr-14 absolute">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="25" height="25" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -46,5 +46,16 @@ import HeaderInf from './HeaderInf.jsx';
 <style>
     input {
         color: #1E1E1E;
+    }
+    @media (max-width: 768px){
+        .searchbar {
+            width: 100%;
+        }
+        .searchbar::placeholder {
+            font-size: 12px;
+        }
+        .logo {
+            width: 80%;
+        }
     }
 </style>

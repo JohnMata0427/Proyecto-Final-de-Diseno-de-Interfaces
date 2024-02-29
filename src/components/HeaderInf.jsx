@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <div className="bg-morado-primario py-2 text-[14px]">
             <nav>
-                <ul className="flex justify-center">
+                <ul className="flex flex-wrap justify-center">
                     <li className="mr-24 flex items-center">
                         <a className="flex items-center" href="/">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

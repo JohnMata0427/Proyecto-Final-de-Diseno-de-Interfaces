@@ -9,7 +9,7 @@ interface props {
 const { title, image, href, className } = Astro.props;
 ---
 
-<a class={`h-[420px] w-[260px] flex flex-col items-center justify-between rounded-[20px] shadow-lg bg-gradient-to-b from-[#150E3C] to-[#D9D9D9] ${className}`} href={href}>
+<a class={`my-3 h-[420px] w-[260px] flex flex-col items-center justify-between rounded-[20px] shadow-lg bg-gradient-to-b from-[#150E3C] to-[#D9D9D9] ${className}`} href={href}>
     <div class="flex items-center justify-center h-full">
         <img src={image} alt={title} class="">
     </div>
