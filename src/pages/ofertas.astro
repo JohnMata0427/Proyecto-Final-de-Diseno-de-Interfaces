@@ -1,38 +1,32 @@
 ---
+// TypeScript o JavaScript
 import Layout from '../layouts/Layout.astro';
 import HeaderSup from '../components/HeaderSup.astro';
 import Footer from '../components/Footer.astro';
 import Filtrar from '../components/Filtrar.jsx';
 import Productos from '../components/Productos.astro';
+
+import dataOfertas from '../data/dataOfertas.js';
 ---
+
+<!-- Astro o HTML -->
 
 <Layout title="Ofertas | Teny">
 	<header>
 		<HeaderSup />
 	</header>
-	<main>
+	<main> <!-- Tailwind CSS -->
 		<img class="h-full w-full" src="./assets/images/banners/Banner Ofertas.png" alt="Oferta 1"/>
 		<section class="flex justify-between py-10">
 			<div class="ml-5">
 				<Filtrar client:visible setFiltro='categorias'/>
 			</div>
 			<div class="flex flex-wrap justify-center gap-y-7 gap-x-4">
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product1.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product2.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product3.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product4.png' className=''/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product1.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product2.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product3.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product4.png' className=''/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product1.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product2.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product3.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product4.png' className=''/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product1.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product2.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product3.png' className='mr-5'/>
-				<Productos id="SKU: LAP0366" nombre='Laptop HP 15-DW3021WM Core i3 11va' precio={744.99} cantidad={1} src='/assets/images/products/product4.png' className=''/>
+				{
+					dataOfertas.map((producto, index) => (
+						<Productos id={producto.id} nombre={producto.nombre} precio={producto.precio} cantidad={1} src={producto.src} className={(index+1)%4 === 0 ? '':'mr-5'}/>
+					))
+				}
 			</div>
 		</section>
 	</main>

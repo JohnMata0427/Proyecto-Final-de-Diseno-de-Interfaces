@@ -2,10 +2,13 @@ import { useState } from 'react';
 
 export default function Filtrar({ setFiltro }) {
     const [value, setValue] = useState(0);
-    const [precio, setPrecio] = useState([0, 5000]);
+
     const handleOnChange = (e) => {
         setValue(e.target.value);
-        setFiltro(`Precio: ${e.target.value}`);
+    };
+
+    const applyFilter = () => {
+        setFiltro(`Precio: ${value}`);
     };
 
     return (
@@ -44,7 +47,7 @@ export default function Filtrar({ setFiltro }) {
                 <input className='py-3' type="range" min="0" max="5000" step="100" value={value} onChange={handleOnChange} />
                 <div className='flex items-center justify-between'>
                     <label className='text-black text-[18px] my-3'>Precio: $0 - ${value}</label>
-                    <button className='bg-gris-oscuro text-[18px] rounded-[10px] w-20'>Filtrar</button>
+                    <button className='bg-gris-oscuro text-[18px] rounded-[10px] w-20' onClick={applyFilter}>Filtrar</button>
                 </div>
             </div>
         </div>
