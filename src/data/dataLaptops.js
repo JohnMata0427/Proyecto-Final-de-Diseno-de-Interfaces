@@ -106,5 +106,5 @@ export default [
         src: '/assets/images/products/LAP1224.jpg',
         categoria: 'laptops',
         subcategoria: 'hp'
-    }
+    },
 ]

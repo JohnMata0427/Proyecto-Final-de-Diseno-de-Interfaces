@@ -1,5 +1,4 @@
 ---
-import type { GetStaticPaths } from "astro";
 import Layout from '../../../layouts/Layout.astro';
 import HeaderSup from '../../../components/HeaderSup.astro';
 import Footer from '../../../components/Footer.astro';
@@ -21,11 +20,9 @@ export async function getStaticPaths() {
 }
 
 let { id } = Astro.params;
-
 let product = allData.find(item => item.id === id);
 
 let contador = 0;
-
 ---
 
 <Layout title={`${product?.nombre} | Tecny`}>
@@ -33,7 +30,7 @@ let contador = 0;
 		<HeaderSup />
 	</header>
 	<main>
-		<DescripcionProducto client:visible id={product?.id} nombre={product?.nombre} precio={product?.precio} descripcion={product?.descripcion} src={product?.src} categoria={''} />
+		<DescripcionProducto client:visible id={product?.id} nombre={product?.nombre} precio={product?.precio} descripcion={product?.descripcion} src={product?.src} categoria={product?.categoria} />
         <section>
             <h2 class="text-center text-morado-primario text-[40px] font-bold">Productos Relacionados</h2>
             <div class="flex justify-center my-5">
@@ -45,6 +42,7 @@ let contador = 0;
                         ) 
                     }
                 })}
+                
             </div>
         </section>
 	</main>
