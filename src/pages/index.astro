@@ -5,22 +5,14 @@ import CategoriasCard from '../components/CategoriasCard.astro';
 import TrabajamosCon from '../components/TrabajamosCon.jsx';
 import Productos from '../components/Productos.astro';
 import Footer from '../components/Footer.astro';
+import products from '../data/requestAPI';
 
-import dataMonitores from '../data/dataMonitores.js';
-import dataLaptops from '../data/dataLaptops.js';
-import dataHardware from '../data/dataHardware.js';
-import dataPerifericos from '../data/dataPerifericos.js';
-
-const allData = [dataMonitores[dataMonitores.length - 1], dataLaptops[dataLaptops.length - 1], dataHardware[dataHardware.length - 1], dataPerifericos[dataPerifericos.length - 1]];
-
-const productos = allData.map((data) => {
-	return {
-		id: data.id,
-		nombre: data.nombre,
-		precio: data.precio,
-		src: data.src
-	}
-});
+const lastProducts = [
+	...products.filter(product => product.categoria === 'hardware').slice(-1),
+	...products.filter(product => product.categoria === 'perifericos').slice(-1),
+	...products.filter(product => product.categoria === 'monitores').slice(-1),
+	...products.filter(product => product.categoria === 'laptops').slice(-1)
+]
 ---
 
 <Layout title="Tienda Tecnológica | Tecny">
@@ -41,14 +33,14 @@ const productos = allData.map((data) => {
 		<section>
 			<h2 class="text-[44px] mb-5 text-center text-morado-primario font-normal">Trabajamos con</h2>
 			<div class="bg-morado-primario">
-				<TrabajamosCon client:visible/>
+				<TrabajamosCon client:load/>
 			</div>
 		</section>
 		<section class="my-10">
 			<h2 class="text-[44px] mb-5 text-center text-morado-primario font-normal mt-3">Productos Nuevos</h2>
 			<div class="flex flex-wrap justify-center">
 				{
-					productos.map((producto, index) => (
+					lastProducts.map((producto, index) => (
 						<Productos id={producto.id} nombre={producto.nombre} precio={producto.precio} cantidad={1} src={producto.src} className={(index+1)%4 === 0 ? '':'mr-5'}/>
 					))
 				}

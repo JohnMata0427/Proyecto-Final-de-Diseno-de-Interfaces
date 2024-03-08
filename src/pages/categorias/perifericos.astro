@@ -4,8 +4,9 @@ import HeaderSup from '../../components/HeaderSup.astro';
 import Footer from '../../components/Footer.astro';
 import Filtrar from '../../components/Filtrar.jsx';
 import Productos from '../../components/Productos.astro';
+import products from '../../data/requestAPI';
 
-import dataPerifericos from '../../data/dataPerifericos.js';
+const perifericos = products.filter(product => product.categoria === 'perifericos');
 ---
 
 <Layout title="Categoría Perifericos | Teny">
@@ -20,7 +21,7 @@ import dataPerifericos from '../../data/dataPerifericos.js';
 			</div>
 			<div class="flex flex-wrap justify-center gap-y-7 gap-x-4">
 				{
-					dataPerifericos.map((producto, index) => (
+					perifericos.map((producto, index) => (
 						<Productos id={producto.id} nombre={producto.nombre} precio={producto.precio} cantidad={1} src={producto.src} className={(index+1)%4 === 0 ? '':'mr-5'}/>
 					))
 				}

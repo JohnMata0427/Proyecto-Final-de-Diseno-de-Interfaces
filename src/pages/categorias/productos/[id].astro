@@ -3,26 +3,18 @@ import Layout from '../../../layouts/Layout.astro';
 import HeaderSup from '../../../components/HeaderSup.astro';
 import Footer from '../../../components/Footer.astro';
 import DescripcionProducto from '../../../components/DescripcionProducto.astro';
-
-import dataMonitores from '../../../data/dataMonitores.js';
-import dataLaptops from '../../../data/dataLaptops.js';
-import dataHardware from '../../../data/dataHardware.js';
-import dataPerifericos from '../../../data/dataPerifericos.js';
 import Productos from "../../../components/Productos.astro";
-
-const allData = [...dataMonitores, ...dataLaptops, ...dataHardware, ...dataPerifericos];
+import products from '../../../data/requestAPI';
 
 export async function getStaticPaths() {
-    const allDataPath = [...dataMonitores, ...dataLaptops, ...dataHardware, ...dataPerifericos];
-    const paths = allDataPath.map(product => ({ params: { id: product.id } }));
-
+    const paths = products.map(product => ({ params: { id: product.id } }));
     return paths;
 }
 
 let { id } = Astro.params;
-let product = allData.find(item => item.id === id);
+let product = products.find(item => item.id === id);
 
-let contador = 0;
+let relatedProducts = products.filter(item => (item.id !== product.id && item.subcategoria === product.subcategoria) || item.categoria === product.categoria).sort(() => Math.random() - 0.5).slice(0, 4);
 ---
 
 <Layout title={`${product?.nombre} | Tecny`}>
@@ -34,15 +26,12 @@ let contador = 0;
         <section>
             <h2 class="text-center text-morado-primario text-[40px] font-bold">Productos Relacionados</h2>
             <div class="flex justify-center my-5">
-                {allData.map((item) => {
-                    if (((item.id !== product?.id && item.subcategoria === product?.subcategoria) || item.categoria === product?.categoria) && contador < 4) {
-                        contador++;
+                {relatedProducts.map((item, index) => {
                         return (
-                            <Productos id={item.id} nombre={item.nombre} precio={item.precio} cantidad={1} src={item.src} className={contador%4 === 0 ? '':'mr-5'}/>
+                            <Productos id={item.id} nombre={item.nombre} precio={item.precio} cantidad={1} src={item.src} className={index%4 === 0 ? '':'mr-5'}/>
                         ) 
                     }
-                })}
-                
+                )}
             </div>
         </section>
 	</main>

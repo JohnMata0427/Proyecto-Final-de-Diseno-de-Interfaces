@@ -12,10 +12,10 @@ const { id, nombre, precio, descripcion, categoria, src } = Astro.props;
 ---
 
 <section class="flex justify-center py-10">
-    <div class="flex items-center justify-center bg-[#fdfdfd] w-[550px] h-[600px] border-[#e5e5e5] border-2 border-solid rounded-tl-[15px] rounded-bl-[15px] mx-10 shadow-lg p-10"> 
+    <div class="flex items-center justify-center bg-[#fdfdfd] size-[550px] border-[#e5e5e5] border-2 border-solid rounded-tl-[15px] rounded-bl-[15px] mx-10 shadow-lg p-10"> 
         <img class="" src={src} alt={nombre} />
     </div>
-    <div class="bg-[#fdfdfd] w-[550px] border-2 h-[600px] border-solid border-[#e5e5e5] rounded-tr-[15px] rounded-br-[15px] shadow-lg flex flex-col pt-6 mx-10">
+    <div class="bg-[#fdfdfd] w-[550px] border-2 h-auto border-solid border-[#e5e5e5] rounded-tr-[15px] rounded-br-[15px] shadow-lg flex flex-col pt-6 mx-10">
         <h3 class="text-black text-[25px] pl-8 font-bold pr-32">{nombre}</h3>
         <p class="text-[#209FD5] pl-8 font-bold py-3 text-[20px]">${precio}</p>
         <p class="text-[#8D8C8C] pl-8 text-[18px] font-medium pr-24">{descripcion}</p>

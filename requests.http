@@ -1,0 +1,66 @@
+###
+POST http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Juanito Perez",
+    "email": "juanito@example.com",
+    "password": "contrasena"
+}
+
+###
+GET http://localhost:9000/api/users HTTP/1.1
+
+###
+GET http://localhost:9000/api/users/65ea8deaeaeafc923224aae1 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/users/65ea8e09eaeafc923224aae4 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Juanito C. Perez",
+    "email": "juanitoc@example.com",
+    "password": "contrasena2"
+}
+
+###
+DELETE http://localhost:9000/api/users/65ea8e09eaeafc923224aae4 HTTP/1.1
+
+###
+POST http://localhost:9000/api/productos HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "HAR0291",
+    "nombre": "Dark Rock 4 Air Cooler",
+    "precio": 74.99,
+    "descripcion": "El Dark Rock 4 es un disipador de CPU de una sola torre con un ventilador de 135 mm. Ofrece un rendimiento de refrigeración extremadamente alto de 200 W TDP y un funcionamiento prácticamente inaudible. El diseño compacto de una sola torre ahorra espacio y se adapta a prácticamente todos los sistemas de PC. Con un diseño de aletas asimétricas y seis tubos de calor, el Dark Rock 4 proporciona un enfriamiento silencioso y eficiente.",
+    "src": "/assets/images/products/HAR0291.webp",
+    "categoria": "hardware",
+    "subcategoria": "coolers",
+    "stock": 10
+}
+
+###
+GET http://localhost:9000/api/productos HTTP/1.1
+
+###
+GET http://localhost:9000/api/productos/65ea94492bbfb51b5734dbd4 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/productos/HAR0291 HTTP/1.1
+
+{
+    "id": "HAR0291",
+    "nombre": "Dark Rock 4 Air Cooler",
+    "precio": 74.99,
+    "descripcion": "El Dark Rock 4 es un disipador de CPU de una sola torre con un ventilador de 135 mm. Ofrece un rendimiento de refrigeración extremadamente alto de 200 W TDP y un funcionamiento prácticamente inaudible. El diseño compacto de una sola torre ahorra espacio y se adapta a prácticamente todos los sistemas de PC. Con un diseño de aletas asimétricas y seis tubos de calor, el Dark Rock 4 proporciona un enfriamiento silencioso y eficiente.",
+    "src": "/assets/images/products/HAR0291.webp",
+    "categoria": "hardware",
+    "subcategoria": "coolers",
+    "stock": 9
+}
+
+###
+DELETE http://localhost:9000/api/productos/65ea9c87b5532b7e5719ace5 HTTP/1.1

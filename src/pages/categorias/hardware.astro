@@ -4,8 +4,9 @@ import HeaderSup from '../../components/HeaderSup.astro';
 import Footer from '../../components/Footer.astro';
 import Filtrar from '../../components/Filtrar.jsx';
 import Productos from '../../components/Productos.astro';
+import products from '../../data/requestAPI';
 
-import dataHardware from '../../data/dataHardware.js';
+const hardware = products.filter(product => product.categoria === 'hardware');
 ---
 
 <Layout title="Categoría Hardware | Teny">
@@ -20,7 +21,7 @@ import dataHardware from '../../data/dataHardware.js';
 			</div>
 			<div class="flex flex-wrap justify-center gap-y-7 gap-x-4">
 				{
-					dataHardware.map((producto, index) => (
+					hardware.map((producto, index) => (
 						<Productos id={producto.id} nombre={producto.nombre} precio={producto.precio} cantidad={1} src={producto.src} className={(index+1)%4 === 0 ? '':'mr-5'}/>
 					))
 				}
