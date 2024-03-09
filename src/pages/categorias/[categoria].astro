@@ -4,12 +4,26 @@ import HeaderSup from '../../components/HeaderSup.astro';
 import Footer from '../../components/Footer.astro';
 import Filtrar from '../../components/Filtrar.jsx';
 import Productos from '../../components/Productos.astro';
-import products from '../../data/requestAPI';
+import { getProducts } from '../../data/request.js';
+
+export const prerender = true;
+
+const products = await getProducts(); 
+
+export async function getStaticPaths() {
+    const products = await getProducts();
+    const paths = products.map(product => ({ params: { categoria: product.categoria } }));
+    return paths;
+}
+
+let { categoria } = Astro.params;
+
+let product = products.find(item => item.categoria === categoria);
 
 const hardware = products.filter(product => product.categoria === 'hardware');
 ---
 
-<Layout title="Categoría Hardware | Teny">
+<Layout title={`Categoría ${product?.categoria} | Teny`}>
 	<header>
 		<HeaderSup />
 	</header>

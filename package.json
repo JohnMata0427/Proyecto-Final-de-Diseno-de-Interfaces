@@ -8,7 +8,7 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "data": "nodemon src/data/conexion.js"
+    "data": "nodemon src/data/connection.js"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.5",

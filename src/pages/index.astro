@@ -5,7 +5,9 @@ import CategoriasCard from '../components/CategoriasCard.astro';
 import TrabajamosCon from '../components/TrabajamosCon.jsx';
 import Productos from '../components/Productos.astro';
 import Footer from '../components/Footer.astro';
-import products from '../data/requestAPI';
+import { getProducts } from '../data/request';
+
+const products = await getProducts();
 
 const lastProducts = [
 	...products.filter(product => product.categoria === 'hardware').slice(-1),

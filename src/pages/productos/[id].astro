@@ -1,20 +1,26 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import HeaderSup from '../../../components/HeaderSup.astro';
-import Footer from '../../../components/Footer.astro';
-import DescripcionProducto from '../../../components/DescripcionProducto.astro';
-import Productos from "../../../components/Productos.astro";
-import products from '../../../data/requestAPI';
+import Layout from '../../layouts/Layout.astro';
+import HeaderSup from '../../components/HeaderSup.astro';
+import Footer from '../../components/Footer.astro';
+import DescripcionProducto from '../../components/DescripcionProducto.astro';
+import Productos from "../../components/Productos.astro";
+import { getProducts } from '../../data/request';
+
+export const prerender = true;
+
+const products = await getProducts();
 
 export async function getStaticPaths() {
+    const products = await getProducts();
     const paths = products.map(product => ({ params: { id: product.id } }));
     return paths;
 }
 
 let { id } = Astro.params;
+
 let product = products.find(item => item.id === id);
 
-let relatedProducts = products.filter(item => (item.id !== product.id && item.subcategoria === product.subcategoria) || item.categoria === product.categoria).sort(() => Math.random() - 0.5).slice(0, 4);
+let relatedProducts = products.filter(item => (item.id !== product?.id && item.subcategoria === product?.subcategoria) || item.categoria === product?.categoria).sort(() => Math.random() - 0.5).slice(0, 4);
 ---
 
 <Layout title={`${product?.nombre} | Tecny`}>
@@ -22,7 +28,7 @@ let relatedProducts = products.filter(item => (item.id !== product.id && item.su
 		<HeaderSup />
 	</header>
 	<main>
-		<DescripcionProducto client:visible id={product?.id} nombre={product?.nombre} precio={product?.precio} descripcion={product?.descripcion} src={product?.src} categoria={product?.categoria} />
+		<DescripcionProducto id={product?.id} nombre={product?.nombre} precio={product?.precio} descripcion={product?.descripcion} src={product?.src} categoria={product?.categoria} />
         <section>
             <h2 class="text-center text-morado-primario text-[40px] font-bold">Productos Relacionados</h2>
             <div class="flex justify-center my-5">
