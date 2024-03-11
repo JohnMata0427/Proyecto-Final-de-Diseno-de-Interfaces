@@ -16,7 +16,7 @@ app.use("/api", userRoutes);
 app.use("/api", productRoutes);
 
 // middleware para manejar errores
-app.use((error, req, res, next) => {
+app.use((error, req, res) => {
     console.error(error);
     res.status(500).send("Algo salió mal!");
 });
