@@ -1,66 +1,79 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import HeaderSup from '../../components/HeaderSup.astro';
-import Footer from '../../components/Footer.astro';
-import Filtrar from '../../components/Filtrar.jsx';
-import Productos from '../../components/Productos.astro';
-import { getProducts } from '../../data/request.js';
+import Layout from "../../layouts/Layout.astro";
+import HeaderSup from "../../components/HeaderSup.astro";
+import Footer from "../../components/Footer.astro";
+import Filtrar from "../../components/Filtrar.jsx";
+import Productos from "../../components/Productos.astro";
+import { getProducts } from "../../data/request.js";
 
 export const prerender = true;
 
-const products = await getProducts(); 
+const products = await getProducts();
 
 export async function getStaticPaths() {
     const products = await getProducts();
-    const paths = products.map(product => ({ params: { categoria: product.categoria } }));
+    const paths = products.map((product) => ({
+        params: { categoria: product.categoria },
+    }));
     return paths;
 }
 
 let { categoria } = Astro.params;
 
-let product = products.find(item => item.categoria === categoria);
+let product = products.find((item) => item.categoria === categoria);
 
-const hardware = products.filter(product => product.categoria === 'hardware');
+const hardware = products.filter((product) => product.categoria === "hardware");
 ---
 
 <Layout title={`Categoría ${product?.categoria} | Teny`}>
-	<header>
-		<HeaderSup />
-	</header>
-	<main>
-		<img class="h-full w-full" src="/assets/images/banners/Banner Hardware.png" alt="Oferta 1"/>
-		<section class="flex justify-between py-10">
-			<div class="ml-5">
-				<Filtrar client:visible setFiltro='categorias'/>
-			</div>
-			<div class="flex flex-wrap justify-center gap-y-7 gap-x-4">
-				{
-					hardware.map((producto, index) => (
-						<Productos id={producto.id} nombre={producto.nombre} precio={producto.precio} cantidad={1} src={producto.src} className={(index+1)%4 === 0 ? '':'mr-5'}/>
-					))
-				}
-			</div>
-		</section>
-	</main>
-	<footer>
-		<Footer />
-	</footer>
+    <header>
+        <HeaderSup />
+    </header>
+    <main>
+        <img
+            class="h-full w-full"
+            src="/assets/images/banners/Banner Hardware.png"
+            alt="Oferta 1"
+        />
+        <section class="flex justify-between py-10">
+            <div class="ml-5">
+                <Filtrar client:visible setFiltro="categorias" />
+            </div>
+            <div class="flex flex-wrap justify-center gap-y-7 gap-x-4">
+                {
+                    hardware.map((producto, index) => (
+                        <Productos
+                            id={producto.id}
+                            nombre={producto.nombre}
+                            precio={producto.precio}
+                            cantidad={1}
+                            src={producto.src}
+                            className={(index + 1) % 4 === 0 ? "" : "mr-5"}
+                        />
+                    ))
+                }
+            </div>
+        </section>
+    </main>
+    <footer>
+        <Footer />
+    </footer>
 </Layout>
 
 <style is:global>
     * {
         color: white;
-        font-family: 'KoPub Batang';
+        font-family: "KoPub Batang";
         font-weight: 400;
         word-wrap: break-word;
     }
-	h2 {
-		font-family: 'Volkhov';
-	}
+    h2 {
+        font-family: "Volkhov";
+    }
 </style>
 
 <style>
-	h2 {
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-	}
+    h2 {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 </style>

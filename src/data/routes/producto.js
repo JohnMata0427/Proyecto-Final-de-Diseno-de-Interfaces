@@ -1,24 +1,24 @@
-import express from 'express';
-import productoSchema from '../models/producto.js';
+import express from "express";
+import productoSchema from "../models/producto.js";
 
 const router = express.Router();
 
-router.post('/productos', (req, res) => {
+router.post("/productos", (req, res) => {
     const producto = productoSchema(req.body);
     producto
         .save()
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
-    });
+});
 
-router.get('/productos', (req, res) => {
+router.get("/productos", (req, res) => {
     productoSchema
         .find()
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
-    });
+});
 
-router.get('/productos/:id', (req, res) => {
+router.get("/productos/:id", (req, res) => {
     const { id } = req.params;
     productoSchema
         .findById(id)
@@ -26,16 +26,30 @@ router.get('/productos/:id', (req, res) => {
         .catch((error) => res.json({ message: error }));
 });
 
-router.put('/productos/:id', (req, res) => {
+router.put("/productos/:id", (req, res) => {
     const { id } = req.params;
-    const { nombre, precio, descripcion, src, categoria, subcategoria, stock } = req.body;
+    const { nombre, precio, descripcion, src, categoria, subcategoria, stock } =
+        req.body;
     productoSchema
-        .updateOne({ id: id }, { $set: { nombre, precio, descripcion, src, categoria, subcategoria, stock } })
+        .updateOne(
+            { id: id },
+            {
+                $set: {
+                    nombre,
+                    precio,
+                    descripcion,
+                    src,
+                    categoria,
+                    subcategoria,
+                    stock,
+                },
+            }
+        )
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });
 
-router.delete('/productos/:id', (req, res) => {
+router.delete("/productos/:id", (req, res) => {
     const { id } = req.params;
     productoSchema
         .deleteOne({ id: id })

@@ -1,52 +1,84 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import HeaderSup from '../components/HeaderSup.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import HeaderSup from "../components/HeaderSup.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Contactanos | Teny">
-	<header>
-		<HeaderSup />
-	</header>
-	<main>
-		<section class="py-10 flex justify-center">
-			<form class="rounded-[20px] shadow-lg m-10 flex flex-col p-10">
+    <header>
+        <HeaderSup />
+    </header>
+    <main>
+        <section class="py-10 flex justify-center">
+            <form class="rounded-[20px] shadow-lg m-10 flex flex-col p-10">
                 <h2 class="text-[30px] font-bold">Dejanos un mensaje</h2>
-                <p class="text-[20px]">Si tiene alguna duda, sugerencia o cualquier pregunta háganosla saber, para poder brindar un mejor servicio, Tecny estará encantado de ayudarle!</p>
+                <p class="text-[20px]">
+                    Si tiene alguna duda, sugerencia o cualquier pregunta
+                    háganosla saber, para poder brindar un mejor servicio, Tecny
+                    estará encantado de ayudarle!
+                </p>
                 <div class="flex w-full justify-between pt-10 px-10">
                     <div class="flex flex-col w-full mr-28">
                         <label for="name">Nombres <span>*</span></label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" name="name" required />
                     </div>
                     <div class="flex flex-col w-full mr-28">
                         <label for="lastname">Apellidos <span>*</span></label>
-                        <input type="text" id="lastname" name="lastname" required>
+                        <input
+                            type="text"
+                            id="lastname"
+                            name="lastname"
+                            required
+                        />
                     </div>
                 </div>
-                <label class="px-10 pt-10" for="mail">Correo <span>*</span></label>
-                <input class="mx-10" type="email" id="mail" name="mail" required>
-                <label class="px-10 pt-10" for="subject">Asunto <span>*</span></label>
-                <input class="mx-10" type="text" id="subject" name="subject" required>
-                <label class="px-10 pt-10" for="message">Mensaje o Comentario <span>*</span></label>
-                <textarea class="mx-10" id="message" name="message" required></textarea>
+                <label class="px-10 pt-10" for="mail"
+                    >Correo <span>*</span></label
+                >
+                <input
+                    class="mx-10"
+                    type="email"
+                    id="mail"
+                    name="mail"
+                    required
+                />
+                <label class="px-10 pt-10" for="subject"
+                    >Asunto <span>*</span></label
+                >
+                <input
+                    class="mx-10"
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    required
+                />
+                <label class="px-10 pt-10" for="message"
+                    >Mensaje o Comentario <span>*</span></label
+                >
+                <textarea class="mx-10" id="message" name="message" required
+                ></textarea>
                 <!-- No soy un robot -->
                 <div class="p-10">
-                    <input type="checkbox" id="robot" name="robot" required>
+                    <input type="checkbox" id="robot" name="robot" required />
                     <label for="robot">No soy un robot</label>
                 </div>
-                <input class="bg-sky-500 hover:bg-sky-700 font-bold text-[20px] ml-10" type="submit" value="Enviar">
+                <input
+                    class="bg-sky-500 hover:bg-sky-700 font-bold text-[20px] ml-10"
+                    type="submit"
+                    value="Enviar"
+                />
             </form>
-		</section>
-	</main>
-	<footer>
-		<Footer />
-	</footer>
+        </section>
+    </main>
+    <footer>
+        <Footer />
+    </footer>
 </Layout>
 
 <style is:global>
     * {
         color: white;
-        font-family: 'KoPub Batang';
+        font-family: "KoPub Batang";
         font-weight: 400;
         word-wrap: break-word;
     }
@@ -59,13 +91,14 @@ import Footer from '../components/Footer.astro';
     form * {
         color: black;
     }
-    input, textarea {
+    input,
+    textarea {
         border: 1px solid #dadada;
         border-radius: 5px;
         padding: 3px 10px;
         transition: 0.3s;
     }
-    label{
+    label {
         font-size: 20px;
     }
     input[type="submit"] {
@@ -80,7 +113,7 @@ import Footer from '../components/Footer.astro';
     }
     input[type="submit"]:hover {
         background-color: #2082e4;
-        transition: 0.3s ;
+        transition: 0.3s;
     }
     form p {
         color: #5f5f5f;
