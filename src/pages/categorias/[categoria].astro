@@ -22,7 +22,7 @@ let { categoria } = Astro.params;
 
 let product = products.find((item) => item.categoria === categoria);
 
-const hardware = products.filter((product) => product.categoria === "hardware");
+const hardware = products.filter((product) => product.categoria === categoria);
 ---
 
 <Layout title={`Categoría ${product?.categoria} | Teny`}>
@@ -32,7 +32,7 @@ const hardware = products.filter((product) => product.categoria === "hardware");
     <main>
         <img
             class="h-full w-full"
-            src="/assets/images/banners/Banner Hardware.png"
+            src={`/assets/images/banners/Banner ${categoria}.png`}
             alt="Oferta 1"
         />
         <section class="flex justify-between py-10">
