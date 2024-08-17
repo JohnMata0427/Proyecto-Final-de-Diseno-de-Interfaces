@@ -8,27 +8,23 @@ import { getProducts } from "../../data/request.js";
 
 export const prerender = true;
 
-const products = await getProducts();
-
 export async function getStaticPaths() {
-    const products = await getProducts();
-    const paths = products.map((product) => ({
-        params: { categoria: product.categoria },
+    const categorias = ['hardware', 'perifericos', 'monitores', 'laptops'];
+    const paths = categorias.map((categoria) => ({
+        params: { categoria }
     }));
     return paths;
 }
 
-let { categoria } = Astro.params;
+const { categoria } = Astro.params;
 
-let product = products.find((item) => item.categoria === categoria);
+const products = await getProducts();
 
-const hardware = products.filter((product) => product.categoria === categoria);
+const hardware = products.filter((item) => item?.categoria === categoria);
 ---
 
-<Layout title={`Categoría ${product?.categoria} | Teny`}>
-    <header>
+<Layout title={`Categoría ${categoria} | Teny`}>
         <HeaderSup />
-    </header>
     <main>
         <img
             class="h-full w-full"
@@ -55,9 +51,7 @@ const hardware = products.filter((product) => product.categoria === categoria);
             </div>
         </section>
     </main>
-    <footer>
         <Footer />
-    </footer>
 </Layout>
 
 <style is:global>

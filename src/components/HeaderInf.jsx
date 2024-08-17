@@ -4,7 +4,7 @@ export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className="bg-morado-primario py-2 text-[14px]">
+        <header className="bg-morado-primario py-2 text-[14px]">
             <nav>
                 <ul className="flex flex-wrap justify-center">
                     <li className="mr-24 flex items-center">
@@ -118,7 +118,7 @@ export default function Header() {
                                 </button>
                             </div>
                             {isOpen && (
-                                <div className="absolute left-4 w-40 shadow-lg bg-black rounded-b-[15px] mt-[8px]">
+                                <div className="absolute left-4 w-40 shadow-lg bg-black rounded-b-2xl mt-[8px]">
                                     <div
                                         role="menu"
                                         aria-orientation="vertical"
@@ -318,6 +318,6 @@ export default function Header() {
                     </li>
                 </ul>
             </nav>
-        </div>
+        </header>
     );
 }

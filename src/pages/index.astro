@@ -10,21 +10,19 @@ import { getProducts } from "../data/request";
 const products = await getProducts();
 
 const lastProducts = [
-    ...products.filter((product) => product.categoria === "hardware").slice(-1),
+    ...products.filter(({categoria}) => categoria === "hardware").slice(-1),
     ...products
-        .filter((product) => product.categoria === "perifericos")
+        .filter(({categoria}) => categoria === "perifericos")
         .slice(-1),
     ...products
-        .filter((product) => product.categoria === "monitores")
+        .filter(({categoria}) => categoria === "monitores")
         .slice(-1),
-    ...products.filter((product) => product.categoria === "laptops").slice(-1),
+    ...products.filter(({categoria}) => categoria === "laptops").slice(-1),
 ];
 ---
 
 <Layout title="Tienda Tecnológica | Tecny">
-    <header>
-        <HeaderSup />
-    </header>
+    <HeaderSup />
     <main>
         <img
             class="h-[75vh]"
@@ -95,9 +93,7 @@ const lastProducts = [
             </div>
         </section>
     </main>
-    <footer>
         <Footer />
-    </footer>
 </Layout>
 
 <style is:global>

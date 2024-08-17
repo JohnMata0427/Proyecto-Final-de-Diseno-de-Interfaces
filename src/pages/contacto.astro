@@ -5,9 +5,7 @@ import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Contactanos | Teny">
-    <header>
         <HeaderSup />
-    </header>
     <main>
         <section class="py-10 flex justify-center">
             <form class="rounded-[20px] shadow-lg m-10 flex flex-col p-10">
@@ -57,7 +55,6 @@ import Footer from "../components/Footer.astro";
                 >
                 <textarea class="mx-10" id="message" name="message" required
                 ></textarea>
-                <!-- No soy un robot -->
                 <div class="p-10">
                     <input type="checkbox" id="robot" name="robot" required />
                     <label for="robot">No soy un robot</label>
@@ -70,9 +67,7 @@ import Footer from "../components/Footer.astro";
             </form>
         </section>
     </main>
-    <footer>
         <Footer />
-    </footer>
 </Layout>
 
 <style is:global>

@@ -12,7 +12,7 @@ export default function Filtrar({ setFiltro }) {
     };
 
     return (
-        <div className="w-[300px] border-[#dadada] border-solid border-[1px] rounded-[15px] shadow-lg">
+        <div className="w-[300px] border-[#dadada] border-solid border-[1px] rounded-2xl shadow-lg">
             <h2 className="text-black text-[20px] font-extrabold pb-3 px-5 pt-5">
                 Filtrar por Subcategorías
             </h2>
@@ -96,7 +96,7 @@ export default function Filtrar({ setFiltro }) {
                         Precio: $0 - ${value}
                     </label>
                     <button
-                        className="bg-gris-oscuro text-[18px] rounded-[10px] w-20"
+                        className="bg-gris-oscuro text-[18px] rounded-lg w-20"
                         onClick={applyFilter}
                     >
                         Filtrar

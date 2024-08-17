@@ -1,10 +1,10 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import HeaderSup from "../../components/HeaderSup.astro";
-import Footer from "../../components/Footer.astro";
 import DescripcionProducto from "../../components/DescripcionProducto.astro";
+import Footer from "../../components/Footer.astro";
+import HeaderSup from "../../components/HeaderSup.astro";
 import Productos from "../../components/Productos.astro";
 import { getProducts } from "../../data/request";
+import Layout from "../../layouts/Layout.astro";
 
 export const prerender = true;
 
@@ -12,29 +12,26 @@ const products = await getProducts();
 
 export async function getStaticPaths() {
     const products = await getProducts();
-    const paths = products.map((product) => ({ params: { id: product.id } }));
+    const paths = products.map(({id}) => ({ params: { id } }));
     return paths;
 }
 
-let { id } = Astro.params;
+const { id } = Astro.params;
 
-let product = products.find((item) => item.id === id);
+const product = products.find(item => item?.id === id);
 
-let relatedProducts = products
+const relatedProducts = products
     .filter(
-        (item) =>
-            (item.id !== product?.id &&
-                item.subcategoria === product?.subcategoria) ||
-            item.categoria === product?.categoria
+        ({subcategoria, categoria}) =>
+            subcategoria === product?.subcategoria ||
+            categoria === product?.categoria
     )
     .sort(() => Math.random() - 0.5)
     .slice(0, 4);
 ---
 
 <Layout title={`${product?.nombre} | Tecny`}>
-    <header>
         <HeaderSup />
-    </header>
     <main>
         <DescripcionProducto
             id={product?.id}
@@ -66,9 +63,7 @@ let relatedProducts = products
             </div>
         </section>
     </main>
-    <footer>
         <Footer />
-    </footer>
 </Layout>
 
 <style is:global>

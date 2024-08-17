@@ -3,21 +3,21 @@ import Layout from '../../layouts/Layout.astro';
 import PasswordInput from '../../components/PasswordInput.jsx';
 ---
 
-<Layout title="Tienda Tecnológica | Tecny">
-	<main class="flex h-[100vh]">
-        <img class="login_image w-[50%] h-full" src="/assets/images/banners/Banner Login.jpg" alt="">
-        <form class="form flex flex-col justify-center w-full px-40">
-            <h1 class="text-center mb-6 text-3xl">Inicio de  sesión</h1>
-            <label class="mt-4 mb-2 text-[15px]" for="correo">Correo</label>
-            <input class="rounded-[8px] h-10 boder-solid border-[2px] border-[#dadada] text-[19px] pl-2" type="text" id="correo" placeholder="Ingrese su correo">
-            <label class="mt-4 mb-2 text-[15px]" for="contrasena">Contraseña</label>
-            <PasswordInput/>
-            <div class="flex justify-start items-center">
-                <input type="checkbox">
-                <label class="mt-4 mb-2 ml-2" for="">Recordar usuario y contraseña</label>
+<Layout title="Iniciar Sesión | Tecny">
+	<main class="flex h-screen">
+        <img class="w-1/2 h-full" src="/assets/images/banners/Banner Login.jpg" alt="">
+        <form class="flex flex-col justify-center w-full px-40">
+            <h1 class="text-center mb-6 text-3xl font-bold">Inicio de sesión</h1>
+            <label class="mt-4 mb-2 font-bold" for="correo">Correo</label>
+            <input class="rounded-lg h-10 boder-solid border-2 border-[#dadada] text-lg pl-2" type="text" id="correo" placeholder="Ingrese su correo">
+            <label class="mt-4 mb-2 font-bold" for="contrasena">Contraseña</label>
+            <PasswordInput />
+            <div class="flex items-center gap-x-2 mt-2">
+                <input class="accent-morado-primario" type="checkbox">
+                <label for="">Recordar usuario y contraseña</label>
             </div>
-            <a class="mt-12 bg-gris-oscuro h-10 text-white rounded-[8px] text-[20px] text-center p-1" href="/">Ingresar</a>
-            <p class="text-center mt-4">¿No tienes cuenta en Tecny? <a href="">Registrate ahora</a></p>
+            <a class="mt-12 bg-gris-oscuro h-10 text-white rounded-lg text-[20px] text-center p-1" href="/">Ingresar</a>
+            <p class="text-center mt-4">¿No tienes cuenta en Tecny? <a class="text-morado-primario hover:underline" href="">Registrate ahora</a></p>
         </form>
     </main>
 </Layout>
@@ -34,20 +34,4 @@ import PasswordInput from '../../components/PasswordInput.jsx';
 	h2 {
 		font-family: 'Volkhov';
 	}
-    @media (max-width: 768px){
-        main {
-            flex-direction: column;
-            width: 100%;
-        }
-        .form {
-            width: 100%;
-            padding: 0 40px;
-            margin-top: 20px;
-            padding-bottom: 20px;
-        }
-        .login_image {
-            width: 100%;
-            height: 50%;
-        }
-    }
 </style>
