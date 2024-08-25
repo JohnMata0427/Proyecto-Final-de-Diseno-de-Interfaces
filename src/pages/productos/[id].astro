@@ -34,12 +34,12 @@ const relatedProducts = products
         <HeaderSup />
     <main>
         <DescripcionProducto
-            id={product?.id}
-            nombre={product?.nombre}
-            precio={product?.precio}
-            descripcion={product?.descripcion}
-            src={product?.src}
-            categoria={product?.categoria}
+            id={product!.id}
+            nombre={product!.nombre}
+            precio={product!.precio}
+            descripcion={product!.descripcion}
+            src={product!.src}
+            categoria={product!.categoria}
         />
         <section>
             <h2 class="text-center text-morado-primario text-[40px] font-bold">
