@@ -1,9 +1,9 @@
 ---
-interface props {
+interface Props {
     title: string;
     image: string;
     href: string;
-    className: string;
+    className?: string;
 }
 
 const { title, image, href, className } = Astro.props;
