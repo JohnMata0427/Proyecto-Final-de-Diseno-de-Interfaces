@@ -1,3 +1,3 @@
 # Preview
 
-![mockuuups-macbook-pro-16-inch-mockup-on-dark-tile-floor](https://github.com/user-attachments/assets/6c02ee36-7786-4638-b994-f8a4384663f8)
+![Preview](https://github.com/user-attachments/assets/3e715b1f-00b8-44e9-a5b7-6a8d911915c7)
