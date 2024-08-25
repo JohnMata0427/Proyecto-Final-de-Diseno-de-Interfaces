@@ -25,7 +25,7 @@ const lastProducts = [
     <HeaderSup />
     <main>
         <img
-            class="h-[75vh]"
+            class="w-full"
             src="./assets/images/banners/Banner Inicio.png"
             alt="Oferta 1"
         />
@@ -77,7 +77,7 @@ const lastProducts = [
             >
                 Productos Nuevos
             </h2>
-            <div class="flex flex-wrap justify-center">
+            <div class="flex flex-wrap justify-center gap-5">
                 {
                     lastProducts.map((producto, index) => (
                         <Productos
@@ -86,7 +86,6 @@ const lastProducts = [
                             precio={producto.precio}
                             cantidad={1}
                             src={producto.src}
-                            className={(index + 1) % 4 === 0 ? "" : "mr-5"}
                         />
                     ))
                 }

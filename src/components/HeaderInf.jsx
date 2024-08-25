@@ -34,9 +34,9 @@ export default function Header() {
                                     id="Vector"
                                     d="M1 1L6 6.29754L11 1"
                                     stroke="#E6E6E6"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                 />
                             </svg>
                         </a>
@@ -68,9 +68,9 @@ export default function Header() {
                                     id="Vector"
                                     d="M1 1L6 6.29754L11 1"
                                     stroke="#E6E6E6"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                 />
                             </svg>
                         </a>
@@ -110,9 +110,9 @@ export default function Header() {
                                             id="Vector"
                                             d="M1 1L6 6.29754L11 1"
                                             stroke="#E6E6E6"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
                                         />
                                     </svg>
                                 </button>
@@ -157,9 +157,9 @@ export default function Header() {
                                                     id="Vector"
                                                     d="M1 10.9952L6.44923 6.16101L1.30843 0.999996"
                                                     stroke="#E6E6E6"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
+                                                    strokeWidth="2"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
                                                 />
                                             </svg>
                                         </a>
@@ -180,9 +180,9 @@ export default function Header() {
                                                     id="Vector"
                                                     d="M7.85714 19L1 10L7.85714 1M18.1429 19L25 10L18.1429 1M9.57143 12.5795L13 17.7143L16.4286 12.5795M13 2.28571V16.431"
                                                     stroke="white"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
+                                                    strokeWidth="2"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
                                                 />
                                             </svg>
                                             <span>Perifericos</span>
@@ -197,9 +197,9 @@ export default function Header() {
                                                     id="Vector"
                                                     d="M1 10.9952L6.44923 6.16101L1.30843 0.999996"
                                                     stroke="#E6E6E6"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
+                                                    strokeWidth="2"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
                                                 />
                                             </svg>
                                         </a>
@@ -234,9 +234,9 @@ export default function Header() {
                                                     id="Vector"
                                                     d="M1 10.9952L6.44923 6.16101L1.30843 0.999996"
                                                     stroke="#E6E6E6"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
+                                                    strokeWidth="2"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
                                                 />
                                             </svg>
                                         </a>
@@ -271,9 +271,9 @@ export default function Header() {
                                                     id="Vector"
                                                     d="M1 10.9952L6.44923 6.16101L1.30843 0.999996"
                                                     stroke="#E6E6E6"
-                                                    stroke-width="2"
-                                                    stroke-linecap="round"
-                                                    stroke-linejoin="round"
+                                                    strokeWidth="2"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
                                                 />
                                             </svg>
                                         </a>
@@ -309,9 +309,9 @@ export default function Header() {
                                     id="Vector"
                                     d="M1 1L6 6.29754L11 1"
                                     stroke="#E6E6E6"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                 />
                             </svg>
                         </a>
