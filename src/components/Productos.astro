@@ -12,26 +12,23 @@ const { id, nombre, precio, cantidad, src, className } = Astro.props;
 ---
 
 <article
-    class={`my-2 w-[250px] h-auto border-[#dadada] border-solid border-[1px] rounded-[20px] shadow-lg ${className}`}
+    class={`my-2 w-64 h-auto border-[#dadada] border-solid border rounded-2xl shadow-lg ${className}`}
 >
-    <a
-        class="h-[225px] flex justify-center items-center"
-        href={`/productos/${id}`}
-    >
+    <a class="flex h-56 items-center justify-center" href={`/productos/${id}`}>
         <img class="p-7" src={src} alt={nombre} />
     </a>
     <hr class="border-[#dadada]" />
-    <div class="h-[225px]">
-        <div class="h-[120px] flex flex-col">
-            <span class="text-gray-500 mt-2 ml-4">SKU: {id}</span>
-            <h3 class="text-black mt-2 mx-4 font-semibold">{nombre}</h3>
-            <span class="text-sky-500 mt-2 ml-4 font-semibold"
+    <div class="h-56">
+        <div class="flex h-32 flex-col">
+            <span class="ml-4 mt-2 text-gray-500">SKU: {id}</span>
+            <h3 class="mx-4 mt-2 font-semibold text-black">{nombre}</h3>
+            <span class="ml-4 mt-2 font-semibold text-sky-500"
                 >{`$ ${precio}`}</span
             >
         </div>
-        <div class="h-[90px] flex flex-col">
+        <div class="flex h-24 flex-col">
             <input
-                class="bg-gris-oscuro rounded-lg my-3 py-1 pl-2 ml-4 w-12"
+                class="my-3 ml-4 w-12 rounded-lg bg-gris-oscuro py-1 pl-2"
                 type="number"
                 min="0"
                 max="99"
@@ -39,7 +36,7 @@ const { id, nombre, precio, cantidad, src, className } = Astro.props;
                 value={cantidad}
             />
             <button
-                class="bg-gris-oscuro flex justify-around items-center py-1 rounded-lg mx-4"
+                class="mx-4 flex items-center justify-around rounded-lg bg-gris-oscuro py-1"
             >
                 <svg
                     width="25"

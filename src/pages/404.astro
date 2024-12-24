@@ -1,13 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import HeaderSup from "../components/HeaderSup.astro";
-import Footer from "../components/Footer.astro";
+import Footer from '@/components/Footer.astro';
+import HeaderSup from '@/components/HeaderSup.astro';
+import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title="404 | Teny">
-        <HeaderSup />
+    <HeaderSup />
     <main>
-        <div class="flex flex-col items-center justify-center h-screen">
+        <div class="flex h-screen flex-col items-center justify-center">
             <h2 class="text-7xl font-bold text-morado-primario">
                 404 | Página no encontrada
             </h2>
@@ -16,13 +16,13 @@ import Footer from "../components/Footer.astro";
             </p>
         </div>
     </main>
-        <Footer />
+    <Footer />
 </Layout>
 
 <style is:global>
     * {
         color: white;
-        font-family: "KoPub Batang";
+        font-family: 'KoPub Batang';
         font-weight: 400;
         word-wrap: break-word;
     }

@@ -1,114 +1,100 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import HeaderSup from "../components/HeaderSup.astro";
-import CategoriasCard from "../components/CategoriasCard.astro";
-import TrabajamosCon from "../components/TrabajamosCon.jsx";
-import Productos from "../components/Productos.astro";
-import Footer from "../components/Footer.astro";
-import { getProducts } from "../data/request";
+import CategoriasCard from '@/components/CategoriasCard.astro';
+import Footer from '@/components/Footer.astro';
+import HeaderSup from '@/components/HeaderSup.astro';
+import Productos from '@/components/Productos.astro';
+import TrabajamosCon from '@/components/TrabajamosCon.jsx';
+import { getProducts } from '@/data/request';
+import Layout from '@/layouts/Layout.astro';
 
 const products = await getProducts();
 
-const lastProducts = [
-    ...products.filter(({categoria}) => categoria === "hardware").slice(-1),
-    ...products
-        .filter(({categoria}) => categoria === "perifericos")
-        .slice(-1),
-    ...products
-        .filter(({categoria}) => categoria === "monitores")
-        .slice(-1),
-    ...products.filter(({categoria}) => categoria === "laptops").slice(-1),
-];
+const lastProducts = products.slice(-4);
 ---
 
 <Layout title="Tienda Tecnológica | Tecny">
-    <HeaderSup />
-    <main>
-        <img
-            class="w-full"
-            src="./assets/images/banners/Banner Inicio.png"
-            alt="Oferta 1"
-        />
-        <section class="pt-5 pb-16">
-            <h2
-                class="text-[44px] font-normal mb-5 text-center text-morado-primario mt-3"
-            >
-                Categorías
-            </h2>
-            <div class="flex flex-wrap justify-center">
-                <CategoriasCard
-                    title="Hardware"
-                    image="./assets/images/categories/Categoria Hardware.png"
-                    href="/categorias/hardware"
-                    className="mr-5"
-                />
-                <CategoriasCard
-                    title="Perifericos"
-                    image="./assets/images/categories/Categoria Perifericos.png"
-                    href="/categorias/perifericos"
-                    className="mr-5"
-                />
-                <CategoriasCard
-                    title="Monitores"
-                    image="./assets/images/categories/Categoria Monitores.png"
-                    href="/categorias/monitores"
-                    className="mr-5"
-                />
-                <CategoriasCard
-                    title="Laptops"
-                    image="./assets/images/categories/Categoria Laptops.png"
-                    href="/categorias/laptops"
-                />
-            </div>
-        </section>
-        <section>
-            <h2
-                class="text-[44px] mb-5 text-center text-morado-primario font-normal"
-            >
-                Trabajamos con
-            </h2>
-            <div class="bg-morado-primario">
-                <TrabajamosCon client:load />
-            </div>
-        </section>
-        <section class="my-10">
-            <h2
-                class="text-[44px] mb-5 text-center text-morado-primario font-normal mt-3"
-            >
-                Productos Nuevos
-            </h2>
-            <div class="flex flex-wrap justify-center gap-5">
-                {
-                    lastProducts.map((producto) => (
-                        <Productos
-                            id={producto.id}
-                            nombre={producto.nombre}
-                            precio={producto.precio}
-                            cantidad={1}
-                            src={producto.src}
-                        />
-                    ))
-                }
-            </div>
-        </section>
-    </main>
-        <Footer />
+	<HeaderSup />
+	<main>
+		<img
+			class="w-full"
+			src="./assets/images/banners/Banner Inicio.png"
+			alt="Banner Inicio"
+		/>
+		<section class="pb-16">
+			<h2
+				class="my-7 text-center text-4xl font-normal text-morado-primario md:text-5xl"
+			>
+				Categorías
+			</h2>
+			<div class="flex flex-wrap justify-center gap-5">
+				<CategoriasCard
+					title="Hardware"
+					image="./assets/images/categories/Categoria Hardware.png"
+					href="/categorias/hardware"
+				/>
+				<CategoriasCard
+					title="Perifericos"
+					image="./assets/images/categories/Categoria Perifericos.png"
+					href="/categorias/perifericos"
+				/>
+				<CategoriasCard
+					title="Monitores"
+					image="./assets/images/categories/Categoria Monitores.png"
+					href="/categorias/monitores"
+				/>
+				<CategoriasCard
+					title="Laptops"
+					image="./assets/images/categories/Categoria Laptops.png"
+					href="/categorias/laptops"
+				/>
+			</div>
+		</section>
+		<section>
+			<h2
+				class="mb-5 text-center text-4xl font-normal text-morado-primario md:text-5xl"
+			>
+				Trabajamos con:
+			</h2>
+			<TrabajamosCon client:visible />
+		</section>
+		<section class="my-10">
+			<h2
+				class="mb-5 mt-3 text-center text-4xl font-normal text-morado-primario md:text-5xl"
+			>
+				Productos Nuevos
+			</h2>
+			<div class="flex flex-wrap justify-center gap-5">
+				{
+					lastProducts.map((producto) => (
+						<Productos
+							id={producto.id}
+							nombre={producto.nombre}
+							precio={producto.precio}
+							cantidad={1}
+							src={producto.src}
+						/>
+					))
+				}
+			</div>
+		</section>
+	</main>
+	<Footer />
 </Layout>
 
 <style is:global>
-    * {
-        color: white;
-        font-family: "KoPub Batang";
-        font-weight: 400;
-        word-wrap: break-word;
-    }
-    h2 {
-        font-family: "Volkhov";
-    }
+	* {
+		color: white;
+		font-family: 'KoPub Batang';
+		font-weight: 400;
+		word-wrap: break-word;
+	}
+	h2 {
+		font-family: 'Volkhov';
+	}
 </style>
 
 <style>
-    h2 {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+	h2 {
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
 </style>

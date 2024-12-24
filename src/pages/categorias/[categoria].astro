@@ -1,17 +1,17 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import HeaderSup from "../../components/HeaderSup.astro";
-import Footer from "../../components/Footer.astro";
-import Filtrar from "../../components/Filtrar.jsx";
-import Productos from "../../components/Productos.astro";
-import { getProducts } from "../../data/request.js";
+import Filtrar from '@/components/Filtrar.jsx';
+import Footer from '@/components/Footer.astro';
+import HeaderSup from '@/components/HeaderSup.astro';
+import Productos from '@/components/Productos.astro';
+import { getProducts } from '@/data/request.js';
+import Layout from '@/layouts/Layout.astro';
 
 export const prerender = true;
 
 export async function getStaticPaths() {
     const categorias = ['hardware', 'perifericos', 'monitores', 'laptops'];
     const paths = categorias.map((categoria) => ({
-        params: { categoria }
+        params: { categoria },
     }));
     return paths;
 }
@@ -24,7 +24,7 @@ const hardware = products.filter((item) => item?.categoria === categoria);
 ---
 
 <Layout title={`Categoría ${categoria} | Teny`}>
-        <HeaderSup />
+    <HeaderSup />
     <main>
         <img
             class="h-full w-full"
@@ -35,7 +35,7 @@ const hardware = products.filter((item) => item?.categoria === categoria);
             <div class="ml-5">
                 <Filtrar client:visible setFiltro="categorias" />
             </div>
-            <div class="flex flex-wrap justify-center gap-y-7 gap-x-4">
+            <div class="flex flex-wrap justify-center gap-x-4 gap-y-7">
                 {
                     hardware.map((producto, index) => (
                         <Productos
@@ -44,25 +44,25 @@ const hardware = products.filter((item) => item?.categoria === categoria);
                             precio={producto.precio}
                             cantidad={1}
                             src={producto.src}
-                            className={(index + 1) % 4 === 0 ? "" : "mr-5"}
+                            className={(index + 1) % 4 === 0 ? '' : 'mr-5'}
                         />
                     ))
                 }
             </div>
         </section>
     </main>
-        <Footer />
+    <Footer />
 </Layout>
 
 <style is:global>
     * {
         color: white;
-        font-family: "KoPub Batang";
+        font-family: 'KoPub Batang';
         font-weight: 400;
         word-wrap: break-word;
     }
     h2 {
-        font-family: "Volkhov";
+        font-family: 'Volkhov';
     }
 </style>
 

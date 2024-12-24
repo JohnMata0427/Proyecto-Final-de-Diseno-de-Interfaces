@@ -1,26 +1,26 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import HeaderSup from "../components/HeaderSup.astro";
-import Footer from "../components/Footer.astro";
+import Footer from '@/components/Footer.astro';
+import HeaderSup from '@/components/HeaderSup.astro';
+import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title="Contactanos | Teny">
-        <HeaderSup />
+    <HeaderSup />
     <main>
-        <section class="py-10 flex justify-center">
-            <form class="rounded-[20px] shadow-lg m-10 flex flex-col p-10">
-                <h2 class="text-[30px] font-bold">Dejanos un mensaje</h2>
-                <p class="text-[20px]">
+        <section class="flex justify-center py-10">
+            <form class="m-10 flex flex-col rounded-3xl p-10 shadow-lg">
+                <h2 class="text-3xl font-bold">Dejanos un mensaje</h2>
+                <p class="text-xl">
                     Si tiene alguna duda, sugerencia o cualquier pregunta
                     háganosla saber, para poder brindar un mejor servicio, Tecny
                     estará encantado de ayudarle!
                 </p>
-                <div class="flex w-full justify-between pt-10 px-10">
-                    <div class="flex flex-col w-full mr-28">
+                <div class="flex w-full justify-between px-10 pt-10">
+                    <div class="mr-28 flex w-full flex-col">
                         <label for="name">Nombres <span>*</span></label>
                         <input type="text" id="name" name="name" required />
                     </div>
-                    <div class="flex flex-col w-full mr-28">
+                    <div class="mr-28 flex w-full flex-col">
                         <label for="lastname">Apellidos <span>*</span></label>
                         <input
                             type="text"
@@ -60,20 +60,20 @@ import Footer from "../components/Footer.astro";
                     <label for="robot">No soy un robot</label>
                 </div>
                 <input
-                    class="bg-sky-500 hover:bg-sky-700 font-bold text-[20px] ml-10"
+                    class="ml-10 bg-sky-500 text-xl font-bold hover:bg-sky-700"
                     type="submit"
                     value="Enviar"
                 />
             </form>
         </section>
     </main>
-        <Footer />
+    <Footer />
 </Layout>
 
 <style is:global>
     * {
         color: white;
-        font-family: "KoPub Batang";
+        font-family: 'KoPub Batang';
         font-weight: 400;
         word-wrap: break-word;
     }
@@ -96,7 +96,7 @@ import Footer from "../components/Footer.astro";
     label {
         font-size: 20px;
     }
-    input[type="submit"] {
+    input[type='submit'] {
         width: 200px;
         height: 40px;
         border-radius: 20px;
@@ -106,7 +106,7 @@ import Footer from "../components/Footer.astro";
     label span {
         color: red;
     }
-    input[type="submit"]:hover {
+    input[type='submit']:hover {
         background-color: #2082e4;
         transition: 0.3s;
     }

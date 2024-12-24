@@ -1,11 +1,11 @@
-import { type ProductsTypes } from "./types/product";
+import { type ProductsTypes } from './types/product';
 
 export const getProducts = async () => {
     const response = await fetch(
-        "https://tecny-api.onrender.com/api/productos"
+        'https://tecny-api.onrender.com/api/productos',
     );
 
-    const products = (await response.json()) as ProductsTypes[];
+    const products = await response.json();
 
-    return products;
+    return products as ProductsTypes[];
 };

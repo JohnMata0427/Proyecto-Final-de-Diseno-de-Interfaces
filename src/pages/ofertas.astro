@@ -1,17 +1,17 @@
 ---
 // TypeScript o JavaScript
-import Layout from "../layouts/Layout.astro";
-import HeaderSup from "../components/HeaderSup.astro";
-import Footer from "../components/Footer.astro";
-import Filtrar from "../components/Filtrar.jsx";
-import Productos from "../components/Productos.astro";
+import Filtrar from '@/components/Filtrar.jsx';
+import Footer from '@/components/Footer.astro';
+import HeaderSup from '@/components/HeaderSup.astro';
+import Productos from '@/components/Productos.astro';
+import Layout from '@/layouts/Layout.astro';
 
-import dataOfertas from "../data/ofertas"
+import { ofertas } from '@/data/ofertas';
 ---
 
 <!-- Astro o HTML -->
 <Layout title="Ofertas | Teny">
-        <HeaderSup />
+    <HeaderSup />
     <main>
         <!-- Tailwind CSS -->
         <img
@@ -23,34 +23,34 @@ import dataOfertas from "../data/ofertas"
             <div class="ml-5">
                 <Filtrar client:visible setFiltro="categorias" />
             </div>
-            <div class="flex flex-wrap justify-center gap-y-7 gap-x-4">
+            <div class="flex flex-wrap justify-center gap-x-4 gap-y-7">
                 {
-                    dataOfertas.map((producto, index) => (
+                    ofertas.map((producto, index) => (
                         <Productos
                             id={producto.id}
                             nombre={producto.nombre}
                             precio={producto.precio}
                             cantidad={1}
                             src={producto.src}
-                            className={(index + 1) % 4 === 0 ? "" : "mr-5"}
+                            className={(index + 1) % 4 === 0 ? '' : 'mr-5'}
                         />
                     ))
                 }
             </div>
         </section>
     </main>
-        <Footer />
+    <Footer />
 </Layout>
 
 <style is:global>
     * {
         color: white;
-        font-family: "KoPub Batang";
+        font-family: 'KoPub Batang';
         font-weight: 400;
         word-wrap: break-word;
     }
     h2 {
-        font-family: "Volkhov";
+        font-family: 'Volkhov';
     }
 </style>
 

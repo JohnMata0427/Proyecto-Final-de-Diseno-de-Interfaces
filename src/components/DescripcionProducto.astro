@@ -13,31 +13,31 @@ const { id, nombre, precio, descripcion, categoria, src } = Astro.props;
 
 <section class="flex justify-center py-10">
     <div
-        class="flex items-center justify-center bg-[#fdfdfd] size-[550px] border-[#e5e5e5] border-2 border-solid rounded-tl-2xl rounded-bl-2xl mx-10 shadow-lg p-10"
+        class="mx-10 flex size-[550px] items-center justify-center rounded-bl-2xl rounded-tl-2xl border-2 border-solid border-[#e5e5e5] bg-[#fdfdfd] p-10 shadow-lg"
     >
         <img src={src} alt={nombre} />
     </div>
     <div
-        class="bg-[#fdfdfd] w-[550px] border-2 h-auto border-solid border-[#e5e5e5] rounded-tr-2xl rounded-br-2xl shadow-lg flex flex-col pt-6 mx-10"
+        class="mx-10 flex h-auto w-[550px] flex-col rounded-br-2xl rounded-tr-2xl border-2 border-solid border-[#e5e5e5] bg-[#fdfdfd] pt-6 shadow-lg"
     >
-        <h3 class="text-black text-[25px] pl-8 font-bold pr-32">{nombre}</h3>
-        <p class="text-[#209FD5] pl-8 font-bold py-3 text-[20px]">${precio}</p>
-        <p class="text-[#8D8C8C] pl-8 text-[18px] font-medium pr-24">
+        <h3 class="pl-8 pr-32 text-2xl font-bold text-black">{nombre}</h3>
+        <p class="py-3 pl-8 text-xl font-bold text-[#209FD5]">${precio}</p>
+        <p class="pl-8 pr-24 text-lg font-medium text-[#8D8C8C]">
             {descripcion}
         </p>
-        <hr class="border-[#e5e5e5] border-solid border-[2px] my-4" />
+        <hr class="my-4 border-2 border-solid border-[#e5e5e5]" />
         <p class="pl-8">
-            <strong class="text-black">SKU:</strong><span class="text-gris-oscuro"
-            >{id}</span
+            <strong class="text-black">SKU:</strong><span
+                class="text-gris-oscuro">{id}</span
             >
         </p>
         <p class="pl-8">
             <strong class="text-black">Categoría:</strong><span
-            class="text-gris-oscuro">{categoria}</span
+                class="text-gris-oscuro">{categoria}</span
             >
         </p>
         <input
-            class="bg-gris-oscuro ml-8 text-center w-12 py-1 rounded-lg mt-5"
+            class="ml-8 mt-5 w-12 rounded-lg bg-gris-oscuro py-1 text-center"
             type="number"
             value="1"
             min="1"
@@ -45,8 +45,17 @@ const { id, nombre, precio, descripcion, categoria, src } = Astro.props;
             id="cantidad"
         />
         <button
-            class="bg-gris-oscuro ml-8 w-48 h-8 flex justify-evenly items-center rounded-2xl mt-3"
-            ><svg xmlns="http://www.w3.org/2000/svg" fill="none" class="size-5" viewBox="0 0 33 34"><path fill="#fff" d="M11 34c1.3 0 2.3-1.3 2.3-2.8 0-1.6-1-2.8-2.4-2.8-1.3 0-2.4 1.2-2.4 2.8 0 1.5 1 2.7 2.4 2.7Zm16.9 0c1.3 0 2.4-1.3 2.4-2.8 0-1.6-1-2.8-2.4-2.8s-2.4 1.2-2.4 2.8c0 1.5 1 2.7 2.4 2.7ZM10.3 21.5H30L33 5H7.7l-.6-4H0v2.7h5L8.7 27h21.6v-2.7H10.7l-.4-2.8Z"/></svg>
+            class="ml-8 mt-3 flex h-8 w-48 items-center justify-evenly rounded-2xl bg-gris-oscuro"
+            ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                class="size-5"
+                viewBox="0 0 33 34"
+                ><path
+                    fill="#fff"
+                    d="M11 34c1.3 0 2.3-1.3 2.3-2.8 0-1.6-1-2.8-2.4-2.8-1.3 0-2.4 1.2-2.4 2.8 0 1.5 1 2.7 2.4 2.7Zm16.9 0c1.3 0 2.4-1.3 2.4-2.8 0-1.6-1-2.8-2.4-2.8s-2.4 1.2-2.4 2.8c0 1.5 1 2.7 2.4 2.7ZM10.3 21.5H30L33 5H7.7l-.6-4H0v2.7h5L8.7 27h21.6v-2.7H10.7l-.4-2.8Z"
+                ></path></svg
+            >
 
             <span>Agregar al carrito</span>
         </button>

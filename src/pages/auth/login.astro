@@ -1,23 +1,44 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import PasswordInput from '../../components/PasswordInput.jsx';
+import PasswordInput from '@/components/PasswordInput.jsx';
+import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title="Iniciar Sesión | Tecny">
-	<main class="flex h-screen">
-        <img class="w-1/2 h-full" src="/assets/images/banners/Banner Login.jpg" alt="">
-        <form class="flex flex-col justify-center w-full px-40">
-            <h1 class="text-center mb-6 text-3xl font-bold">Inicio de sesión</h1>
-            <label class="mt-4 mb-2 font-bold" for="correo">Correo</label>
-            <input class="rounded-lg h-10 boder-solid border-2 border-[#dadada] text-lg pl-2" type="text" id="correo" placeholder="Ingrese su correo">
-            <label class="mt-4 mb-2 font-bold" for="contrasena">Contraseña</label>
+    <main class="flex h-screen">
+        <img
+            class="h-full w-1/2"
+            src="/assets/images/banners/Banner Login.jpg"
+            alt=""
+        />
+        <form class="flex w-full flex-col justify-center px-40">
+            <h1 class="mb-6 text-center text-3xl font-bold">
+                Inicio de sesión
+            </h1>
+            <label class="mb-2 mt-4 font-bold" for="correo">Correo</label>
+            <input
+                class="boder-solid h-10 rounded-lg border-2 border-[#dadada] pl-2 text-lg"
+                type="text"
+                id="correo"
+                placeholder="Ingrese su correo"
+            />
+            <label class="mb-2 mt-4 font-bold" for="contrasena"
+                >Contraseña</label
+            >
             <PasswordInput />
-            <div class="flex items-center gap-x-2 mt-2">
-                <input class="accent-morado-primario" type="checkbox">
+            <div class="mt-2 flex items-center gap-x-2">
+                <input class="accent-morado-primario" type="checkbox" />
                 <label for="">Recordar usuario y contraseña</label>
             </div>
-            <a class="mt-12 bg-gris-oscuro h-10 text-white rounded-lg text-[20px] text-center p-1" href="/">Ingresar</a>
-            <p class="text-center mt-4">¿No tienes cuenta en Tecny? <a class="text-morado-primario hover:underline" href="">Registrate ahora</a></p>
+            <a
+                class="mt-12 h-10 rounded-lg bg-gris-oscuro p-1 text-center text-xl text-white"
+                href="/">Ingresar</a
+            >
+            <p class="mt-4 text-center">
+                ¿No tienes cuenta en Tecny? <a
+                    class="text-morado-primario hover:underline"
+                    href="">Registrate ahora</a
+                >
+            </p>
         </form>
     </main>
 </Layout>
@@ -27,11 +48,11 @@ import PasswordInput from '../../components/PasswordInput.jsx';
         font-family: 'KoPub Batang';
         font-weight: 400;
         word-wrap: break-word;
-		box-sizing: border-box;
-		scroll-behavior: smooth;
-		scroll-padding: 3rem;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        scroll-padding: 3rem;
     }
-	h2 {
-		font-family: 'Volkhov';
-	}
+    h2 {
+        font-family: 'Volkhov';
+    }
 </style>

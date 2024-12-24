@@ -10,8 +10,8 @@ export type ProductsTypes = {
 };
 
 export enum Categoria {
-    Hardware = "hardware",
-    Laptops = "laptops",
-    Monitores = "monitores",
-    Perifericos = "perifericos",
+    Hardware = 'hardware',
+    Laptops = 'laptops',
+    Monitores = 'monitores',
+    Perifericos = 'perifericos',
 }
