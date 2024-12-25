@@ -12,7 +12,7 @@ export default function PasswordInput() {
                 placeholder="Contraseña"
             ></input>
             <button
-                className="ml-4 h-10 w-36 rounded-lg bg-gris-oscuro text-center text-white"
+                className="ml-4 h-10 w-36 rounded-lg bg-gris-oscuro text-center"
                 onClick={(event) => {
                     event.preventDefault();
                     setIsVisible(!isVisible);

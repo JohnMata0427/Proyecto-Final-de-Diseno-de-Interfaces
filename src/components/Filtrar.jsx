@@ -1,79 +1,41 @@
 import { useState } from 'react';
 
-export default function Filtrar({ setFiltro }) {
+export default function Filtrar() {
     const [value, setValue] = useState(0);
 
     const handleOnChange = (e) => {
         setValue(e.target.value);
     };
 
-    const applyFilter = () => {
-        setFiltro(`Precio: ${value}`);
-    };
-
     return (
-        <div className="w-80 rounded-2xl border border-solid border-[#dadada] shadow-lg">
+        <div className="w-full rounded-2xl border border-solid border-[#dadada] shadow-lg md:w-80">
             <h2 className="px-5 pb-3 pt-5 text-xl font-extrabold text-black">
                 Filtrar por Subcategorías
             </h2>
             <h3 className="px-5 text-lg font-bold text-black">Hardware</h3>
             <div className="flex flex-col p-4 px-5">
-                <label className="pb-1">
-                    <input
-                        type="checkbox"
-                        onChange={(e) =>
-                            setFiltro(e.target.checked ? 'Procesadores' : '')
-                        }
-                    />
+                <label>
+                    <input type="checkbox" />
                     <span className="pl-2 text-black">Procesadores</span>
                 </label>
-                <label className="pb-1">
-                    <input
-                        type="checkbox"
-                        onChange={(e) =>
-                            setFiltro(e.target.checked ? 'Mainboards' : '')
-                        }
-                    />
+                <label>
+                    <input type="checkbox" />
                     <span className="pl-2 text-black">Mainboards</span>
                 </label>
-                <label className="pb-1">
-                    <input
-                        type="checkbox"
-                        onChange={(e) =>
-                            setFiltro(e.target.checked ? 'Memorias RAM' : '')
-                        }
-                    />
+                <label>
+                    <input type="checkbox" />
                     <span className="pl-2 text-black">Memorias RAM</span>
                 </label>
-                <label className="pb-1">
-                    <input
-                        type="checkbox"
-                        onChange={(e) =>
-                            setFiltro(e.target.checked ? 'Almacenamiento' : '')
-                        }
-                    />
+                <label>
+                    <input type="checkbox" />
                     <span className="pl-2 text-black">Almacenamiento</span>
                 </label>
-                <label className="pb-1">
-                    <input
-                        type="checkbox"
-                        onChange={(e) =>
-                            setFiltro(
-                                e.target.checked ? 'Tarjetas de Video' : '',
-                            )
-                        }
-                    />
+                <label>
+                    <input type="checkbox" />
                     <span className="pl-2 text-black">Tarjetas de Video</span>
                 </label>
-                <label className="pb-1">
-                    <input
-                        type="checkbox"
-                        onChange={(e) =>
-                            setFiltro(
-                                e.target.checked ? 'Fuentes de Poder' : '',
-                            )
-                        }
-                    />
+                <label>
+                    <input type="checkbox" />
                     <span className="pl-2 text-black">Fuentes de Poder</span>
                 </label>
             </div>
@@ -83,7 +45,6 @@ export default function Filtrar({ setFiltro }) {
             </h2>
             <div className="flex flex-col px-5 pb-5">
                 <input
-                    className="py-3"
                     type="range"
                     min="0"
                     max="5000"
@@ -91,14 +52,11 @@ export default function Filtrar({ setFiltro }) {
                     value={value}
                     onChange={handleOnChange}
                 />
-                <div className="flex items-center justify-between">
-                    <label className="my-3 text-lg text-black">
+                <div className="mt-2 flex items-center justify-between">
+                    <label className="text-lg text-black">
                         Precio: $0 - ${value}
                     </label>
-                    <button
-                        className="w-20 rounded-lg bg-gris-oscuro text-lg"
-                        onClick={applyFilter}
-                    >
+                    <button className="w-20 rounded-lg bg-gris-oscuro text-lg">
                         Filtrar
                     </button>
                 </div>

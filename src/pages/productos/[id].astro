@@ -1,7 +1,5 @@
 ---
 import DescripcionProducto from '@/components/DescripcionProducto.astro';
-import Footer from '@/components/Footer.astro';
-import HeaderSup from '@/components/HeaderSup.astro';
 import Productos from '@/components/Productos.astro';
 import { getProducts } from '@/data/request';
 import Layout from '@/layouts/Layout.astro';
@@ -12,15 +10,15 @@ const products = await getProducts();
 
 export async function getStaticPaths() {
     const products = await getProducts();
-    const paths = products.map(({ id }) => ({ params: { id } }));
+    const paths = products?.map(({ id }) => ({ params: { id } }));
     return paths;
 }
 
 const { id } = Astro.params;
 
-const product = products.find((item) => item?.id === id);
+const product = products?.find((item) => item?.id === id);
 
-const relatedProducts = products
+const relatedProducts = products!
     .filter(
         ({ subcategoria, categoria }) =>
             subcategoria === product?.subcategoria ||
@@ -31,7 +29,6 @@ const relatedProducts = products
 ---
 
 <Layout title={`${product?.nombre} | Tecny`}>
-    <HeaderSup />
     <main>
         <DescripcionProducto
             id={product!.id}
@@ -41,21 +38,19 @@ const relatedProducts = products
             src={product!.src}
             categoria={product!.categoria}
         />
-        <section>
+        <section class="flex flex-col items-center">
             <h2 class="text-center text-4xl font-bold text-morado-primario">
                 Productos Relacionados
             </h2>
-            <div class="my-5 flex justify-center">
+            <div class="products m-5 grid w-3/4 gap-4">
                 {
-                    relatedProducts.map((item, index) => {
+                    relatedProducts.map(({ id, nombre, precio, src }) => {
                         return (
                             <Productos
-                                id={item.id}
-                                nombre={item.nombre}
-                                precio={item.precio}
-                                cantidad={1}
-                                src={item.src}
-                                className={index % 4 === 0 ? '' : 'mr-5'}
+                                id={id}
+                                nombre={nombre}
+                                precio={precio}
+                                src={src}
                             />
                         );
                     })
@@ -63,14 +58,4 @@ const relatedProducts = products
             </div>
         </section>
     </main>
-    <Footer />
 </Layout>
-
-<style is:global>
-    * {
-        color: white;
-        font-family: 'KoPub Batang';
-        font-weight: 400;
-        word-wrap: break-word;
-    }
-</style>

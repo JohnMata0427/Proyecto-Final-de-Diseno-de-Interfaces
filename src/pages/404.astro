@@ -1,11 +1,8 @@
 ---
-import Footer from '@/components/Footer.astro';
-import HeaderSup from '@/components/HeaderSup.astro';
 import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title="404 | Teny">
-    <HeaderSup />
     <main>
         <div class="flex h-screen flex-col items-center justify-center">
             <h2 class="text-7xl font-bold text-morado-primario">
@@ -16,14 +13,4 @@ import Layout from '@/layouts/Layout.astro';
             </p>
         </div>
     </main>
-    <Footer />
 </Layout>
-
-<style is:global>
-    * {
-        color: white;
-        font-family: 'KoPub Batang';
-        font-weight: 400;
-        word-wrap: break-word;
-    }
-</style>

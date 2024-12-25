@@ -1,7 +1,7 @@
 {
     "name": "diseno-interfaces",
     "type": "module",
-    "version": "0.0.1",
+    "version": "2.0.0",
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
@@ -24,13 +24,10 @@
         "typescript": "^5.7.2",
         "zod": "^3.24.1"
     },
-    "engines": {
-        "node": ">=14.x"
-    },
-    "packageManager": "pnpm@9.15.1",
     "devDependencies": {
         "prettier": "^3.4.2",
         "prettier-plugin-astro": "^0.14.1",
         "prettier-plugin-tailwindcss": "^0.6.9"
-    }
+    },
+    "packageManager": "pnpm@9.15.1"
 }

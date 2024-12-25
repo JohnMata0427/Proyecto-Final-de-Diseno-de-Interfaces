@@ -11,41 +11,40 @@ interface Props {
 const { id, nombre, precio, descripcion, categoria, src } = Astro.props;
 ---
 
-<section class="flex justify-center py-10">
+<section
+    class="mx-10 flex flex-col items-center justify-center gap-10 py-10 md:flex-row"
+>
     <div
-        class="mx-10 flex size-[550px] items-center justify-center rounded-bl-2xl rounded-tl-2xl border-2 border-solid border-[#e5e5e5] bg-[#fdfdfd] p-10 shadow-lg"
+        class="flex h-96 w-full items-center justify-center rounded-l-2xl border-2 border-solid border-[#e5e5e5] bg-[#fdfdfd] p-8 shadow-lg md:w-1/2"
     >
-        <img src={src} alt={nombre} />
+        <img class="h-full object-contain" src={src} alt={nombre} />
     </div>
     <div
-        class="mx-10 flex h-auto w-[550px] flex-col rounded-br-2xl rounded-tr-2xl border-2 border-solid border-[#e5e5e5] bg-[#fdfdfd] pt-6 shadow-lg"
+        class="flex h-auto flex-col rounded-r-2xl border-2 border-solid border-[#e5e5e5] bg-[#fdfdfd] px-8 py-6 shadow-lg md:w-1/2"
     >
-        <h3 class="pl-8 pr-32 text-2xl font-bold text-black">{nombre}</h3>
-        <p class="py-3 pl-8 text-xl font-bold text-[#209FD5]">${precio}</p>
-        <p class="pl-8 pr-24 text-lg font-medium text-[#8D8C8C]">
+        <h3 class="text-2xl font-bold text-black">{nombre}</h3>
+        <p class="py-3 text-xl font-bold text-[#209FD5]">${precio}</p>
+        <p class="text-lg font-medium text-[#8D8C8C]">
             {descripcion}
         </p>
         <hr class="my-4 border-2 border-solid border-[#e5e5e5]" />
-        <p class="pl-8">
-            <strong class="text-black">SKU:</strong><span
-                class="text-gris-oscuro">{id}</span
-            >
-        </p>
-        <p class="pl-8">
-            <strong class="text-black">Categoría:</strong><span
-                class="text-gris-oscuro">{categoria}</span
-            >
-        </p>
+        <span class="text-gris-oscuro"
+            ><strong class="text-black">SKU: </strong>{id}</span
+        >
+        <span class="text-gris-oscuro"
+            ><strong class="text-black">Categoría: </strong>{
+                categoria[0].toUpperCase() + categoria.slice(1)
+            }</span
+        >
         <input
-            class="ml-8 mt-5 w-12 rounded-lg bg-gris-oscuro py-1 text-center"
+            class="mt-5 w-12 rounded-lg bg-gris-oscuro py-1 text-center"
             type="number"
-            value="1"
             min="1"
+            value="1"
             max="99"
-            id="cantidad"
         />
         <button
-            class="ml-8 mt-3 flex h-8 w-48 items-center justify-evenly rounded-2xl bg-gris-oscuro"
+            class="mt-3 flex h-8 w-48 items-center justify-evenly rounded-lg bg-gris-oscuro"
             ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

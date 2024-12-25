@@ -1,13 +1,38 @@
 import { useState } from 'react';
 
-export default function Header() {
+function Option({ text, href, children }) {
+    return (
+        <a
+            className="group flex items-center gap-x-2 transition-all hover:scale-105"
+            href={href}
+        >
+            {children}
+            <span className="transition-all group-hover:text-sky-500">
+                {text}
+            </span>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 12 8"
+                className="size-3"
+            >
+                <path
+                    className="stroke-white transition-all group-hover:stroke-sky-500"
+                    d="m1 1 5 5.3L11 1"
+                />
+            </svg>
+        </a>
+    );
+}
+
+export default function Navigagion() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
         <nav className="bg-morado-primario py-2 text-sm">
             <ul className="flex flex-wrap justify-center gap-x-20 gap-y-2 px-4">
                 <li>
-                    <a className="flex items-center gap-x-2" href="/">
+                    <Option text="Inicio" href="/">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -15,23 +40,14 @@ export default function Header() {
                             className="size-4"
                         >
                             <path
-                                fill="#fff"
+                                className="fill-white transition-all group-hover:fill-sky-500"
                                 d="M16.3 6.4V.7H13v2.6L10 0 0 10.7h2.5V20h5.6v-7.1H12V20h5.6v-9.3H20l-3.8-4.3Z"
                             />
                         </svg>
-                        <span>Inicio</span>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 12 8"
-                            className="size-4"
-                        >
-                            <path stroke="#E6E6E6" d="m1 1 5 5.3L11 1" />
-                        </svg>
-                    </a>
+                    </Option>
                 </li>
                 <li>
-                    <a className="flex items-center gap-x-2" href="/ofertas">
+                    <Option text="Ofertas" href="/ofertas">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -39,24 +55,15 @@ export default function Header() {
                             viewBox="0 0 21 21"
                         >
                             <path
-                                fill="#E6E6E6"
+                                className="fill-white transition-all group-hover:fill-sky-500"
                                 d="m20.7 7.2-1.9-1.9a.9.9 0 0 0-1.2 0 1.3 1.3 0 0 1-2.2-1c0-.3.1-.7.3-1a.9.9 0 0 0 0-1.1l-2-2a.9.9 0 0 0-1.2 0l-3 3.1L9 4a.3.3 0 0 1-.2.2l-.7.4-7.8 8a.9.9 0 0 0 0 1.2l1.9 1.9a.9.9 0 0 0 1.2 0 1.3 1.3 0 0 1 1.9 2 .9.9 0 0 0 0 1.1l2 2a.9.9 0 0 0 1.2 0l7.9-8c.2-.1.3-.4.4-.6a.3.3 0 0 1 .2-.2l.7-.5 3-3a.9.9 0 0 0 0-1.3ZM10.7 6a.7.7 0 0 1-1 0l-.4-.5a.7.7 0 0 1 1-1l.5.5a.7.7 0 0 1 0 1Zm2 2a.7.7 0 0 1-1 0l-.5-.5a.7.7 0 0 1 1-1l.5.5a.7.7 0 0 1 0 1Zm1.9 1.9a.7.7 0 0 1-1 0l-.5-.5a.7.7 0 0 1 1-1l.5.5a.7.7 0 0 1 0 1Zm2 2a.7.7 0 0 1-1 0l-.5-.6a.7.7 0 1 1 1-1l.5.6a.7.7 0 0 1 0 1Z"
                             />
                         </svg>
-                        <span>Ofertas</span>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            className="size-4"
-                            viewBox="0 0 12 8"
-                        >
-                            <path stroke="#E6E6E6" d="m1 1 5 5.3L11 1" />
-                        </svg>
-                    </a>
+                    </Option>
                 </li>
                 <li className="relative">
                     <button
-                        className="flex items-center gap-x-2"
+                        className="group flex items-center gap-x-2 transition-all hover:scale-105"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         <svg
@@ -66,18 +73,23 @@ export default function Header() {
                             viewBox="0 0 21 19"
                         >
                             <path
-                                fill="#E6E6E6"
+                                className="fill-white transition-all group-hover:fill-sky-500"
                                 d="M16.2 1.5H4.8c-.2 0-.4 0-.5-.2A.8.8 0 0 1 4 .8l.3-.6.5-.2h11.4c.2 0 .4 0 .5.2l.3.6c0 .2-.1.4-.3.5-.1.2-.3.2-.5.2ZM17.8 4H3.2a.5.5 0 0 1-.5-.3.8.8 0 0 1-.3-.5l.3-.6.5-.2h14.6l.5.2.3.6c0 .2-.1.4-.3.5-.1.2-.3.3-.5.3Zm1 14.6H2.2c-.6 0-1.2-.2-1.6-.6a2 2 0 0 1-.7-1.5V6.8c0-.6.2-1.1.7-1.5.4-.4 1-.7 1.6-.7h16.4c.6 0 1.2.3 1.6.7.5.4.7 1 .7 1.5v9.6a2 2 0 0 1-.7 1.5c-.4.4-1 .6-1.6.6Z"
                             />
                         </svg>
-                        <span>Categorias</span>
+                        <span className="transition-all group-hover:text-sky-500">
+                            Categorias
+                        </span>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
-                            className="size-4"
+                            className="size-3"
                             viewBox="0 0 12 8"
                         >
-                            <path stroke="#E6E6E6" d="m1 1 5 5.3L11 1" />
+                            <path
+                                className="stroke-white transition-all group-hover:stroke-sky-500"
+                                d="m1 1 5 5.3L11 1"
+                            />
                         </svg>
                     </button>
                     {isOpen && (
@@ -205,7 +217,7 @@ export default function Header() {
                     )}
                 </li>
                 <li>
-                    <a className="flex items-center gap-x-2" href="/contacto">
+                    <Option text="Contacto" href="/contacto">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -213,20 +225,11 @@ export default function Header() {
                             viewBox="0 0 21 21"
                         >
                             <path
-                                fill="#E6E6E6"
+                                className="fill-white transition-all group-hover:fill-sky-500"
                                 d="M16.8 21c-.9 0-2.2-.3-4.1-1.4a26.8 26.8 0 0 1-6.5-4.9 24.6 24.6 0 0 1-4.8-6.4C-.4 5-.1 3.5.3 2.8c.3-.9 1-1.4 1.7-1.9A8.3 8.3 0 0 1 3.4.2c.3-.1.6-.3 1-.1.4 0 .6.3 1 .7.9.9 2 2.7 2.5 3.7.3.6.5 1 .5 1.4 0 .6-.3 1-.6 1.4l-.2.3c-.4.4-.4.6-.4.8.1.5.9 2 2.2 3.2 1.3 1.3 2.7 2 3.2 2.1.2.1.3 0 .8-.3l.2-.2c.5-.4 1-.6 1.5-.6.4 0 .8.2 1.5.5a18 18 0 0 1 3.6 2.4l.7 1c.2.4 0 .8 0 1l-.1.1L20 19c-.5.7-1 1.3-1.9 1.7-.4.2-.9.3-1.4.3Z"
                             />
                         </svg>
-                        <span>Contacto</span>
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            className="size-4"
-                            viewBox="0 0 12 8"
-                        >
-                            <path stroke="#E6E6E6" d="m1 1 5 5.3L11 1" />
-                        </svg>
-                    </a>
+                    </Option>
                 </li>
             </ul>
         </nav>

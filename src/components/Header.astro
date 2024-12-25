@@ -1,5 +1,5 @@
 ---
-import HeaderInf from './HeaderInf.jsx';
+import Navigation from './Navigation.jsx';
 ---
 
 <header class="flex flex-col">
@@ -9,10 +9,10 @@ import HeaderInf from './HeaderInf.jsx';
         <a href="/">
             <img class="max-h-8" src="/assets/images/Logo.png" alt="Logo" />
         </a>
-        <div class="flex gap-4 sm:gap-8">
-            <div class="relative flex justify-end">
+        <div class="flex w-3/4 gap-4 sm:gap-8">
+            <div class="relative flex w-full justify-end">
                 <input
-                    class="searchbar h-10 rounded-2xl pl-4 text-[#1e1e1e]"
+                    class="searchbar h-10 w-full rounded-2xl pl-4 text-gris-oscuro"
                     placeholder="Buscar Productos..."
                 />
                 <button class="absolute right-2 h-10">
@@ -20,12 +20,10 @@ import HeaderInf from './HeaderInf.jsx';
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         stroke="#000"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
                         stroke-width="2"
                         viewBox="0 0 24 24"
                         class="size-5"
-                        ><path stroke="none" d="M0 0h24v24H0z"></path><path
+                        ><path
                             d="M3 10a7 7 0 1 0 14 0 7 7 0 1 0-14 0M21 21l-6-6"
                         ></path></svg
                     >
@@ -50,7 +48,7 @@ import HeaderInf from './HeaderInf.jsx';
                 >
                 <span>Mi Cuenta</span>
             </a>
-            <a class="flex h-10 items-center" href="/carrito">
+            <a class="flex h-10 items-center" href="/">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -67,5 +65,5 @@ import HeaderInf from './HeaderInf.jsx';
             </a>
         </div>
     </div>
-    <HeaderInf client:visible />
+    <Navigation client:visible />
 </header>

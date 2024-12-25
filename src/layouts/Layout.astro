@@ -1,4 +1,7 @@
 ---
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+
 interface Props {
     title: string;
 }
@@ -24,7 +27,28 @@ const { title } = Astro.props;
         />
         <title>{title}</title>
     </head>
-    <body>
+    <body class="break-words text-white">
+        <Header />
         <slot />
+        <Footer />
     </body>
 </html>
+
+<style is:global>
+    * {
+        font-family: 'KoPub Batang';
+    }
+    h2 {
+        font-family: 'Volkhov';
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .products {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    @media (min-width: 640px) {
+        .products {
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+    }
+</style>
