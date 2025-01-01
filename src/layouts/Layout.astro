@@ -3,7 +3,7 @@ import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
 
 interface Props {
-    title: string;
+	title: string;
 }
 
 const { title } = Astro.props;
@@ -11,44 +11,44 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="description" content="Tienda de tecnología" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-            rel="stylesheet"
-        />
-        <meta name="generator" content={Astro.generator} />
-        <meta
-            name="description"
-            content="Proyecto académico que simula una tienda de venta de articulos tecnológicos"
-        />
-        <title>{title}</title>
-    </head>
-    <body class="break-words text-white">
-        <Header />
-        <slot />
-        <Footer />
-    </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Tienda de tecnología" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<meta name="generator" content={Astro.generator} />
+		<meta
+			name="description"
+			content="Proyecto académico que simula una tienda de venta de articulos tecnológicos"
+		/>
+		<title>{title}</title>
+	</head>
+	<body class="break-words text-white">
+		<Header />
+		<slot />
+		<Footer />
+	</body>
 </html>
 
 <style is:global>
-    * {
-        font-family: 'KoPub Batang';
-    }
-    h2 {
-        font-family: 'Volkhov';
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-    .products {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
+	* {
+		font-family: 'KoPub Batang';
+	}
+	h2 {
+		font-family: 'Volkhov';
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	.products {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	}
 
-    @media (min-width: 640px) {
-        .products {
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        }
-    }
+	@media (min-width: 640px) {
+		.products {
+			grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		}
+	}
 </style>
