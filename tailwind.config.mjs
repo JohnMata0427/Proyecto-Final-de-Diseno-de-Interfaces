@@ -28,12 +28,12 @@ export default {
 						},
 				},
 				animation: {
-						scroll: 'scroll 20s linear infinite',
+						scroll: 'scroll 10s linear infinite',
 				},
 				keyframes: {
 						scroll: {
-								'0%': { transform: 'translateX(0%)' },
-								'100%': { transform: 'translateX(-100%)' },
+								from: { transform: 'translateX(0)' },
+								to: { transform: 'translateX(-100%)' },
 						},
 				},
 		},

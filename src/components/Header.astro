@@ -1,5 +1,10 @@
 ---
 import Navigation from './Navigation.jsx';
+
+import { getProducts } from '@/data/request';
+
+const products = await getProducts();
+
 ---
 
 <header class="flex flex-col">
@@ -12,7 +17,7 @@ import Navigation from './Navigation.jsx';
         <div class="flex w-3/4 gap-4 sm:gap-8">
             <div class="relative flex w-full justify-end">
                 <input
-                    class="searchbar h-10 w-full rounded-2xl pl-4 text-gris-oscuro"
+                    class="h-10 w-full rounded-2xl pl-4 text-gris-oscuro"
                     placeholder="Buscar Productos..."
                 />
                 <button class="absolute right-2 h-10">

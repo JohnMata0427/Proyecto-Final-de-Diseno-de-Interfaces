@@ -6,26 +6,27 @@ import Layout from '@/layouts/Layout.astro';
 
 export const prerender = true;
 
-const products = await getProducts();
-
 export async function getStaticPaths() {
     const products = await getProducts();
-    const paths = products?.map(({ id }) => ({ params: { id } }));
-    return paths;
+    
+    return products?.map(product => {
+        const relatedProducts = products
+            .filter(
+                ({ subcategoria, categoria }) =>
+                    subcategoria === product.subcategoria ||
+                    categoria === product.categoria,
+            )
+            .sort(() => Math.random() - 0.5)
+            .slice(0, 4);
+
+        return {
+            params: { id: product.id },
+            props: { product, relatedProducts },
+        }
+    })
 }
 
-const { id } = Astro.params;
-
-const product = products?.find((item) => item?.id === id);
-
-const relatedProducts = products!
-    .filter(
-        ({ subcategoria, categoria }) =>
-            subcategoria === product?.subcategoria ||
-            categoria === product?.categoria,
-    )
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 4);
+const { product, relatedProducts } = Astro.props
 ---
 
 <Layout title={`${product?.nombre} | Tecny`}>

@@ -17,7 +17,7 @@ const { id, nombre, precio, descripcion, categoria, src } = Astro.props;
     <div
         class="flex h-96 w-full items-center justify-center rounded-l-2xl border-2 border-solid border-[#e5e5e5] bg-[#fdfdfd] p-8 shadow-lg md:w-1/2"
     >
-        <img class="h-full object-contain" src={src} alt={nombre} />
+        <img transition:name={`img-${id}`} class="h-full object-contain" src={src} alt={nombre} />
     </div>
     <div
         class="flex h-auto flex-col rounded-r-2xl border-2 border-solid border-[#e5e5e5] bg-[#fdfdfd] px-8 py-6 shadow-lg md:w-1/2"

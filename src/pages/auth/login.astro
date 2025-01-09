@@ -8,35 +8,34 @@ import Layout from '@/layouts/Layout.astro';
         <img
             class="h-full w-1/2"
             src="/assets/images/banners/Banner Login.jpg"
-            alt=""
+            alt="Banner del Login"
         />
         <form class="flex w-full flex-col justify-center px-40">
-            <h1 class="mb-6 text-center text-3xl font-bold">
+            <h1 class="mb-6 text-center text-3xl font-bold text-black">
                 Inicio de sesión
             </h1>
-            <label class="mb-2 mt-4 font-bold" for="correo">Correo</label>
+            <label class="mb-2 mt-4 font-bold text-black" for="correo">Correo</label>
             <input
-                class="boder-solid h-10 rounded-lg border-2 border-[#dadada] pl-2 text-lg"
+                class="boder-solid h-10 rounded-lg border-2 border-[#dadada] pl-2 text-lg text-black"
                 type="text"
                 id="correo"
                 placeholder="Ingrese su correo"
             />
-            <label class="mb-2 mt-4 font-bold" for="contrasena"
+            <label class="mb-2 mt-4 font-bold text-black" for="contrasena"
                 >Contraseña</label
             >
             <PasswordInput />
             <div class="mt-2 flex items-center gap-x-2">
-                <input class="accent-morado-primario" type="checkbox" />
-                <label for="">Recordar usuario y contraseña</label>
+                <input id="dontforget" class="accent-morado-primario" type="checkbox" />
+                <label class="text-black" for="dontforget">Recordar usuario y contraseña</label>
             </div>
             <a
-                class="mt-12 h-10 rounded-lg bg-gris-oscuro p-1 text-center text-xl"
+                class="mt-12 h-10 rounded-lg bg-gris-oscuro p-1 text-center text-xl font-bold"
                 href="/">Ingresar</a
             >
-            <p class="mt-4 text-center">
+            <p class="mt-4 text-center text-black">
                 ¿No tienes cuenta en Tecny? <a
-                    class="text-morado-primario hover:underline"
-                    href="">Registrate ahora</a
+                    class="text-morado-primario hover:underline">Registrate ahora</a
                 >
             </p>
         </form>
