@@ -61,9 +61,9 @@ export default function Navigagion() {
                         </svg>
                     </Option>
                 </li>
-                <li className="relative">
+                <li>
                     <button
-                        className="group flex items-center gap-x-2 transition-all hover:scale-105"
+                        className="group flex items-center gap-x-2 transition-all hover:scale-105 relative"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         <svg

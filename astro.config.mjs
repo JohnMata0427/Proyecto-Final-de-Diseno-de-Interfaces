@@ -12,5 +12,10 @@ export default defineConfig({
   adapter: vercel({ imageService: true }),
   redirects: {
     '/': '/inicio',
+  },
+  vite: {
+    optimizeDeps: {
+      include: ['react-compiler-runtime']
+    }
   }
 });
