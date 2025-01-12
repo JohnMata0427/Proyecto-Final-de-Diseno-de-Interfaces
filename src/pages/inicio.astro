@@ -1,13 +1,13 @@
 ---
 import CategoriasCard from '@/components/CategoriasCard.astro';
 import Productos from '@/components/Productos.astro';
-import SliderLogos from '@/components/SliderLogos.astro';
 import { getProducts } from '@/data/request';
 import Layout from '@/layouts/Layout.astro';
 
 const products = await getProducts();
 
 const lastProducts = products?.slice(-4);
+const logos = ['samsung', 'lg', 'apple', 'sony'];
 ---
 
 <Layout title="Tienda Tecnológica | Tecny">
@@ -53,7 +53,13 @@ const lastProducts = products?.slice(-4);
 				Trabajamos con:
 			</h2>
 			<div class="overflow-hidden bg-morado-primario">
-        <SliderLogos client:load/>
+        <div class="flex items-center whitespace-nowrap animate-scroll w-screen">
+					{
+						logos.map((logo) => (
+							<img class="mx-8" src={`/assets/images/icons/${logo}.png`} alt={logo} />
+						))
+					}
+				</div>
 			</div>
 		</section>
 		<section class="my-10 flex flex-col items-center">
