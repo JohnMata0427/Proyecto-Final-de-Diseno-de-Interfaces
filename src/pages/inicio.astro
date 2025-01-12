@@ -1,7 +1,7 @@
 ---
 import CategoriasCard from '@/components/CategoriasCard.astro';
 import Productos from '@/components/Productos.astro';
-import TrabajamosCon from '@/components/TrabajamosCon.astro';
+import SliderLogos from '@/components/SliderLogos.astro';
 import { getProducts } from '@/data/request';
 import Layout from '@/layouts/Layout.astro';
 
@@ -53,7 +53,7 @@ const lastProducts = products?.slice(-4);
 				Trabajamos con:
 			</h2>
 			<div class="overflow-hidden bg-morado-primario">
-        <TrabajamosCon client:load/>
+        <SliderLogos client:load/>
 			</div>
 		</section>
 		<section class="my-10 flex flex-col items-center">
