@@ -2,10 +2,7 @@
 import { ClientRouter } from 'astro:transitions';
 import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
-
-interface Props {
-	title: string;
-}
+import SpeedInsights from '@vercel/speed-insights/astro';
 
 const { title } = Astro.props;
 ---
@@ -23,6 +20,7 @@ const { title } = Astro.props;
 			content="Proyecto académico que simula una tienda de venta de articulos tecnológicos"
 		/>
 		<title>{title}</title>
+		<SpeedInsights />
 		<ClientRouter />
 	</head>
 	<body class="text-white">
