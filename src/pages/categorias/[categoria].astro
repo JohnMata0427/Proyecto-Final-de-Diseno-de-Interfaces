@@ -8,30 +8,33 @@ export const prerender = true;
 
 export async function getStaticPaths() {
     const categorias = ['hardware', 'perifericos', 'monitores', 'laptops'];
-    const paths = categorias.map((categoria) => ({
-        params: { categoria },
-    }));
-    return paths;
+    const products = await getProducts();
+    
+    return categorias.map((categoria) => {
+        const category = products?.filter((item) => item?.categoria === categoria);
+
+        return {
+            params: { categoria },
+            props: { category }
+        };
+    });
 }
 
-const { categoria } = Astro.params;
+const { params: { categoria }, props: { category } } = Astro;
 
-const products = await getProducts();
-
-const category = products?.filter((item) => item?.categoria === categoria);
 ---
 
 <Layout title={`Categoría ${categoria} | Teny`}>
     <main>
         <img
-            class="h-full w-full"
+            class="h-full w-full aspect-[8/3] object-cover"
             src={`/assets/images/banners/Banner-${categoria}.png`}
             alt="Oferta 1"
         />
         <section
             class="flex flex-col items-center px-5 py-10 md:flex-row md:items-start"
         >
-            <Filtrar client:visible />
+            <Filtrar categoria={category} client:visible />
             <div class="products m-5 grid w-full gap-4">
                 {
                     category?.map(({ id, nombre, precio, src }) => (

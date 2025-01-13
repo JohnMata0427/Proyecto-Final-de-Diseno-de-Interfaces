@@ -1,24 +1,24 @@
 import { useRef, useState, useEffect } from 'react';
 
 export function SearchBar({ products }) {
-  const [search, setSearch] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [showResults, setShowResults] = useState(false);
   const searchBarRef = useRef(null);
 
-  const handleSearch = (event) => {
-    setSearch(event.target.value);
+  const handleSearch = ({ target }) => {
+    const search = target.value.toLowerCase();
     setFilteredProducts(
       products.filter((product) => {
         const { nombre, id } = product;
-        const searchValue = search.toLowerCase();
         if (
-          nombre.toLowerCase().includes(searchValue) ||
-          id.toLowerCase().includes(searchValue)
+          nombre.toLowerCase().includes(search) ||
+          id.toLowerCase().includes(search)
         )
           return product;
       }),
     );
+
+    if (!search) setFilteredProducts([]);
   };
 
   const handleClickOutside = ({ target }) => {
@@ -38,7 +38,7 @@ export function SearchBar({ products }) {
       <input
         className="h-10 w-full rounded-2xl pl-4 text-gris-oscuro"
         placeholder="Buscar Productos..."
-        value={search}
+        type="search"
         onChange={handleSearch}
       />
       <button className="absolute right-2 h-10">

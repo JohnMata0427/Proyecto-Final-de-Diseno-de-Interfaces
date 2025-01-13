@@ -16,7 +16,7 @@ import { ofertas } from '@/data/ofertas';
         <section
             class="flex flex-col items-center px-5 py-10 md:flex-row md:items-start"
         >
-            <Filtrar client:visible />
+            <Filtrar categoria={ofertas} client:visible />
             <div class="products m-5 grid w-full gap-2">
                 {
                     ofertas.map(({ id, nombre, precio, src }) => (

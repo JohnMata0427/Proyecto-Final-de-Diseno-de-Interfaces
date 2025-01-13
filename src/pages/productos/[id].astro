@@ -12,9 +12,9 @@ export async function getStaticPaths() {
     return products?.map(product => {
         const relatedProducts = products
             .filter(
-                ({ subcategoria, categoria }) =>
+                ({ subcategoria, categoria, id }) =>
                     subcategoria === product.subcategoria ||
-                    categoria === product.categoria,
+                    categoria === product.categoria && id !== product.id
             )
             .sort(() => Math.random() - 0.5)
             .slice(0, 4);
