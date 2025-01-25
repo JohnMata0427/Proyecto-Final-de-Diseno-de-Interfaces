@@ -13,13 +13,13 @@ const logos = ['samsung', 'lg', 'apple', 'sony'];
 <Layout title="Tienda Tecnológica | Tecny">
 	<main>
 		<img
-			class="w-full aspect-[16/5]"
+			class="aspect-[16/5] w-full"
 			src="./assets/images/banners/Banner Inicio.png"
 			alt="Banner Inicio"
 		/>
 		<section class="my-10 flex flex-col items-center gap-5">
 			<h2
-				class="text-center text-4xl font-normal text-morado-primario md:text-5xl"
+				class="text-morado-primario text-center text-4xl font-normal md:text-5xl"
 			>
 				Categorías
 			</h2>
@@ -48,15 +48,34 @@ const logos = ['samsung', 'lg', 'apple', 'sony'];
 		</section>
 		<section>
 			<h2
-				class="my-10 text-center text-4xl font-normal text-morado-primario md:text-5xl"
+				class="text-morado-primario my-10 text-center text-4xl font-normal md:text-5xl"
 			>
 				Trabajamos con:
 			</h2>
-			<div class="overflow-hidden bg-morado-primario">
-        <div class="flex items-center whitespace-nowrap animate-scroll w-screen">
+			<div
+				class="bg-morado-primario before:from-morado-primario relative flex space-x-8 overflow-hidden before:absolute before:top-0 before:left-0 before:z-10 before:h-full before:w-1/5 before:bg-gradient-to-r before:to-transparent after:absolute after:top-0 after:right-0 after:z-10 after:h-full after:w-1/5 after:bg-gradient-to-l after:from-morado-primario after:to-transparent"
+			>
+				<div class="animate-scroll flex items-center space-x-8">
 					{
 						logos.map((logo) => (
-							<img class="mx-8" src={`/assets/images/icons/${logo}.png`} alt={logo} />
+							<img
+								loading="lazy"
+								class="max-w-none"
+								src={`/assets/images/icons/${logo}.png`}
+								alt={logo}
+							/>
+						))
+					}
+				</div>
+				<div class="animate-scroll flex items-center space-x-8">
+					{
+						logos.map((logo) => (
+							<img
+								loading="lazy"
+								class="max-w-none"
+								src={`/assets/images/icons/${logo}.png`}
+								alt={logo}
+							/>
 						))
 					}
 				</div>
@@ -64,7 +83,7 @@ const logos = ['samsung', 'lg', 'apple', 'sony'];
 		</section>
 		<section class="my-10 flex flex-col items-center">
 			<h2
-				class="mb-5 mt-3 text-center text-4xl font-normal text-morado-primario md:text-5xl"
+				class="text-morado-primario mt-3 mb-5 text-center text-4xl font-normal md:text-5xl"
 			>
 				Productos Nuevos
 			</h2>

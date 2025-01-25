@@ -34,14 +34,14 @@ export function SearchBar({ products }) {
   }, []);
 
   return (
-    <div ref={searchBarRef} className="relative flex w-full justify-end">
+    <div ref={searchBarRef} className="relative flex w-full">
       <input
-        className="h-10 w-full rounded-2xl pl-4 text-gris-oscuro"
+        className="h-10 w-full rounded-2xl pl-8 pr-2 text-gris-oscuro bg-white"
         placeholder="Buscar Productos..."
         type="search"
         onChange={handleSearch}
       />
-      <button className="absolute right-2 h-10">
+      <button className="absolute pl-2 h-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

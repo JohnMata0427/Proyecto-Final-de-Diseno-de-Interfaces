@@ -9,7 +9,7 @@ const { id, nombre, precio, cantidad = 1, src } = Astro.props;
         class="flex max-h-52 items-center justify-center"
         href={`/productos/${id}`}
     >
-        <img transition:name={`img-${id}`} class="h-full aspect-square object-contain p-4" src={src} alt={nombre} />
+        <img loading="lazy" transition:name={`img-${id}`} class="h-full aspect-square object-contain p-4" src={src} alt={nombre} />
     </a>
     <hr class="border-[#dadada]" />
     <div class="m-4">

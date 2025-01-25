@@ -10,17 +10,6 @@ function Option({ text, href, children }) {
             <span className="transition-all group-hover:text-sky-500">
                 {text}
             </span>
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 12 8"
-                className="size-3"
-            >
-                <path
-                    className="stroke-white transition-all group-hover:stroke-sky-500"
-                    d="m1 1 5 5.3L11 1"
-                />
-            </svg>
         </a>
     );
 }
@@ -63,7 +52,7 @@ export default function Navigagion() {
                 </li>
                 <li>
                     <button
-                        className="group flex items-center gap-x-2 transition-all hover:scale-105 relative"
+                        className="group flex items-center gap-x-2 transition-all hover:scale-105 relative cursor-pointer"
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         <svg
@@ -96,7 +85,7 @@ export default function Navigagion() {
                         <div className="absolute mt-2 w-40 rounded-b-xl bg-black text-sm shadow-md shadow-black">
                             <a
                                 href="/categorias/hardware"
-                                className="flex items-center justify-between px-4 py-2"
+                                className="flex items-center justify-between px-4 py-2 hover:bg-gris-oscuro"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +118,7 @@ export default function Navigagion() {
                             <hr></hr>
                             <a
                                 href="/categorias/perifericos"
-                                className="flex items-center justify-between px-4 py-2"
+                                className="flex items-center justify-between px-4 py-2 hover:bg-gris-oscuro"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +147,7 @@ export default function Navigagion() {
                             <hr></hr>
                             <a
                                 href="/categorias/monitores"
-                                className="flex items-center justify-between px-4 py-2"
+                                className="flex items-center justify-between px-4 py-2 hover:bg-gris-oscuro"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -187,7 +176,7 @@ export default function Navigagion() {
                             <hr></hr>
                             <a
                                 href="/categorias/laptops"
-                                className="flex items-center justify-between px-4 py-2"
+                                className="flex items-center justify-between px-4 py-2 hover:bg-gris-oscuro rounded-b-xl"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,5 @@
 ---
+import '../../index.css'
 import { ClientRouter } from 'astro:transitions';
 import Footer from '@/components/Footer.astro';
 import Header from '@/components/Header.astro';
@@ -20,12 +21,6 @@ const { title } = Astro.props;
 			content="Proyecto académico que simula una tienda de venta de articulos tecnológicos"
 		/>
 		<title>{title}</title>
-		<script is:inline>
-			function speedInsightsBeforeSend(data){
-				console.log("Speed Insights before send", data)
-				return data;
-			}
-		</script>
 		<SpeedInsights />
 		<ClientRouter />
 	</head>

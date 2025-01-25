@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-morado-primario: #2E234D;
+  --color-gris-oscuro: #202020;
+  --animate-scroll: scroll 20s linear infinite;
+
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}
