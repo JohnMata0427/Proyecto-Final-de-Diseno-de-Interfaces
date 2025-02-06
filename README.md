@@ -1,3 +1,3 @@
 # Preview
 
-![Preview](https://github.com/user-attachments/assets/3e715b1f-00b8-44e9-a5b7-6a8d911915c7)
+![image](https://github.com/user-attachments/assets/95b9a695-d881-4cc5-92cc-3e8eb0c67c54)
